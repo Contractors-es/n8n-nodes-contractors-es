@@ -12,5 +12,10 @@ function copyIcons() {
 	const credSource = path.resolve('credentials', '**', '*.{png,svg}');
 	const credDestination = path.resolve('dist', 'credentials');
 
-	return src(credSource).pipe(dest(credDestination));
+	src(credSource).pipe(dest(credDestination));
+
+	const rootSource = path.resolve('logo.svg');
+	const rootDestination = path.resolve('dist');
+
+	return src(rootSource).pipe(dest(rootDestination));
 }
