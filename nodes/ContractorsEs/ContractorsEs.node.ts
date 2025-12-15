@@ -62,7 +62,7 @@ export class ContractorsEs implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'Contractors.es',
         name: 'contractors-es',
-        icon: 'file:logo.svg',
+        icon: 'file:../../logo.svg',
         group: ['transform'],
         version: 1,
         subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',

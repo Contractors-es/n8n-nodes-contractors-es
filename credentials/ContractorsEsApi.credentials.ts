@@ -11,7 +11,7 @@ import {
 
 export class ContractorsEsApi implements ICredentialType {
     name = 'contractorsEsApi';
-    icon = 'file:logo.svg' as Icon;
+    icon = 'file:../logo.svg' as Icon;
     displayName = 'Contractors.es API';
     documentationUrl = 'https://api.contractors.es/';
     properties: INodeProperties[] = [
