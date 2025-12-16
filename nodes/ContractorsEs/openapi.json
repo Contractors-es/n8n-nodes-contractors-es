@@ -20,6 +20,70 @@
         }
     ],
     "paths": {
+        "\/api\/auth\/login": {
+            "post": {
+                "operationId": "auth-login",
+                "security": [],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "title": "AuthLoginRequest",
+                                "type": "object",
+                                "properties": {
+                                    "username": {
+                                        "type": "string"
+                                    },
+                                    "password": {
+                                        "type": "string"
+                                    },
+                                    "useragent": {
+                                        "type": "string",
+                                        "description": "Client identifier for auditing"
+                                    }
+                                },
+                                "required": [
+                                    "username",
+                                    "password"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "Token issued",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "access_token": {
+                                            "type": "string"
+                                        },
+                                        "token_type": {
+                                            "type": "string",
+                                            "example": "Bearer"
+                                        },
+                                        "expires_in": {
+                                            "type": "integer",
+                                            "description": "Token TTL in seconds"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid credentials"
+                    }
+                },
+                "summary": "Login to obtain bearer token",
+                "tags": [
+                    "Auth Api"
+                ]
+            }
+        },
         "\/api\/countries": {
             "get": {
                 "parameters": [],
@@ -49892,70 +49956,6 @@
                     "Subcontractors Paid Relation Api"
                 ],
                 "operationId": "delete-api-contractors-subcontractors-agreements-subcontractors-agreement-paid-paid-dissociate"
-            }
-        },
-        "\/api\/auth\/login": {
-            "post": {
-                "operationId": "auth-login",
-                "security": [],
-                "requestBody": {
-                    "content": {
-                        "application\/json": {
-                            "schema": {
-                                "title": "AuthLoginRequest",
-                                "type": "object",
-                                "properties": {
-                                    "username": {
-                                        "type": "string"
-                                    },
-                                    "password": {
-                                        "type": "string"
-                                    },
-                                    "useragent": {
-                                        "type": "string",
-                                        "description": "Client identifier for auditing"
-                                    }
-                                },
-                                "required": [
-                                    "username",
-                                    "password"
-                                ]
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "200": {
-                        "description": "Token issued",
-                        "content": {
-                            "application\/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "access_token": {
-                                            "type": "string"
-                                        },
-                                        "token_type": {
-                                            "type": "string",
-                                            "example": "Bearer"
-                                        },
-                                        "expires_in": {
-                                            "type": "integer",
-                                            "description": "Token TTL in seconds"
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    },
-                    "400": {
-                        "description": "Invalid credentials"
-                    }
-                },
-                "summary": "Login to obtain bearer token",
-                "tags": [
-                    "Auth Api"
-                ]
             }
         }
     },

@@ -60,16 +60,16 @@ export class ContractorsEsApi implements ICredentialType {
     ];
 
     preAuthentication = async function (this: IHttpRequestHelper, credentials: ICredentialDataDecryptedObject): Promise<IDataObject> {
-        console.log('Pre-authenticating Contractors.es API credentials...');
         if (credentials.accessToken) {
             return { accessToken: credentials.accessToken };
         }
 
-        console.log('Authenticating with Contractors.es API...', `${credentials.url}/api/auth/login`);
+        const url = (credentials.url as string).trim().replace(/\/+$/g, '');
+        credentials.url = url;
 
         const response = await this.helpers.httpRequest({
             method: 'POST',
-            url: `${credentials.url}/api/auth/login`,
+            url: `${url}/api/auth/login`,
             body: {
                 username: credentials.login,
                 password: credentials.password,
@@ -77,14 +77,12 @@ export class ContractorsEsApi implements ICredentialType {
             },
         }) as IDataObject;
 
-        console.log('Authentication successful.', response);
         const accessToken = (response?.token as IDataObject | undefined)?.access_token as string | undefined
             ?? (response?.token as IDataObject | undefined)?.accessToken as string | undefined;
 
         if (!accessToken) {
             throw new Error('Authentication failed: No access token returned');
         }
-        console.log('Received access token:', accessToken);
 
         return { accessToken };
     };
