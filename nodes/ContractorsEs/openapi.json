@@ -84,6 +84,87 @@
                 ]
             }
         },
+        "\/api\/auth\/user-info": {
+            "get": {
+                "operationId": "auth-user-info",
+                "security": [
+                    {
+                        "BearerAuth": []
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Authenticated user info",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "status": {
+                                            "type": "string",
+                                            "enum": [
+                                                "success",
+                                                "fail"
+                                            ]
+                                        },
+                                        "username": {
+                                            "type": "string"
+                                        },
+                                        "name": {
+                                            "type": "string"
+                                        },
+                                        "email": {
+                                            "type": "string",
+                                            "format": "email"
+                                        },
+                                        "avatar": {
+                                            "type": "string",
+                                            "format": "uri",
+                                            "nullable": true
+                                        },
+                                        "contact": {
+                                            "type": "object",
+                                            "nullable": true,
+                                            "properties": {
+                                                "id": {
+                                                    "type": "integer"
+                                                },
+                                                "first_name": {
+                                                    "type": "string"
+                                                },
+                                                "last_name": {
+                                                    "type": "string"
+                                                },
+                                                "phone": {
+                                                    "type": "string",
+                                                    "nullable": true
+                                                },
+                                                "mobile": {
+                                                    "type": "string",
+                                                    "nullable": true
+                                                },
+                                                "email": {
+                                                    "type": "string",
+                                                    "format": "email",
+                                                    "nullable": true
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    }
+                },
+                "summary": "Get authenticated user info",
+                "tags": [
+                    "Auth Api"
+                ]
+            }
+        },
         "\/api\/countries": {
             "get": {
                 "parameters": [],
