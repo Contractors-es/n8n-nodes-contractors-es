@@ -60,10 +60,6 @@ export class ContractorsEsApi implements ICredentialType {
     ];
 
     preAuthentication = async function (this: IHttpRequestHelper, credentials: ICredentialDataDecryptedObject): Promise<IDataObject> {
-        if (credentials.accessToken) {
-            return { accessToken: credentials.accessToken };
-        }
-
         const url = (credentials.url as string).trim().replace(/\/+$/g, '');
         credentials.url = url;
 
