@@ -7732,7 +7732,8 @@
                                                         "future",
                                                         "past",
                                                         "yesterday",
-                                                        "date"
+                                                        "date",
+                                                        "mine"
                                                     ]
                                                 },
                                                 "parameters": {
@@ -10553,7 +10554,8 @@
                                                         "future",
                                                         "past",
                                                         "yesterday",
-                                                        "undone"
+                                                        "undone",
+                                                        "mine"
                                                     ]
                                                 },
                                                 "parameters": {
@@ -12659,7 +12661,8 @@
                                                         "future",
                                                         "past",
                                                         "yesterday",
-                                                        "undone"
+                                                        "undone",
+                                                        "mine"
                                                     ]
                                                 },
                                                 "parameters": {
@@ -25634,10 +25637,10 @@
                                                         "documentationOrActive",
                                                         "tm",
                                                         "notTm",
-                                                        "myProjects",
+                                                        "mine",
                                                         "withLaborOrTm",
                                                         "editable",
-                                                        "editableOrMyProjects"
+                                                        "editableOrMine"
                                                     ]
                                                 },
                                                 "parameters": {
@@ -37787,9 +37790,9 @@
                                                         "proposalPending",
                                                         "proposalSubmitted",
                                                         "proposalAwarded",
-                                                        "myProjectBiddings",
+                                                        "mine",
                                                         "editable",
-                                                        "editableOrMyProjectBiddings",
+                                                        "editableOrMine",
                                                         "awarded",
                                                         "lost"
                                                     ]
@@ -46905,7 +46908,7 @@
                                                         "approved",
                                                         "sent",
                                                         "favoritesProjects",
-                                                        "myChangeOrders"
+                                                        "mine"
                                                     ]
                                                 },
                                                 "parameters": {
