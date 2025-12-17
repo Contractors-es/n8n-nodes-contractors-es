@@ -37786,7 +37786,7 @@
                                                     "enum": [
                                                         "active",
                                                         "inactive",
-                                                        "newProjectBidding",
+                                                        "initialInquiry",
                                                         "proposalPending",
                                                         "proposalSubmitted",
                                                         "proposalAwarded",
