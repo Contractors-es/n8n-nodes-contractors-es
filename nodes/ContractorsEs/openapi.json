@@ -37,6 +37,10 @@
                                     "password": {
                                         "type": "string"
                                     },
+                                    "api_token": {
+                                        "type": "string",
+                                        "description": "API token for 2FA-enabled accounts"
+                                    },
                                     "useragent": {
                                         "type": "string",
                                         "description": "Client identifier for auditing"

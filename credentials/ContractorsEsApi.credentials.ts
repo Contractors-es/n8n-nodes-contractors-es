@@ -48,6 +48,16 @@ export class ContractorsEsApi implements ICredentialType {
             typeOptions: { password: true },
         },
         {
+            displayName: '2FA API Token',
+            name: 'twofaApiToken',
+            type: 'string',
+            placeholder: "your-2fa-api-token",
+            default: '',
+            required: false,
+            description: 'If you have 2FA enabled, provide an API token generated from your Contractors.es user settings.',
+            typeOptions: { password: true },
+        },
+        {
             displayName: 'Access Token',
             name: 'accessToken',
             type: 'hidden',
@@ -63,14 +73,22 @@ export class ContractorsEsApi implements ICredentialType {
         const url = (credentials.url as string).trim().replace(/\/+$/g, '');
         credentials.url = url;
 
+        let body: IDataObject = {};
+        body = {
+            username: credentials.login,
+            password: credentials.password,
+            useragent: 'n8n',
+        };
+
+        if (credentials.twofaApiToken) {
+            //add api_token to body
+            body['api_token'] = credentials.twofaApiToken;
+        }
+
         const response = await this.helpers.httpRequest({
             method: 'POST',
             url: `${url}/api/auth/login`,
-            body: {
-                username: credentials.login,
-                password: credentials.password,
-                useragent: 'n8n',
-            },
+            body: body,
         }) as IDataObject;
 
         const accessToken = (response?.token as IDataObject | undefined)?.access_token as string | undefined
