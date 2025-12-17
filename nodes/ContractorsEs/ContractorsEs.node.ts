@@ -54,6 +54,24 @@ export const customDefaults: Override[] = [
             default: "n8n"
         },
     },
+    {
+        find: {
+            name: 'with_trashed',
+            type: 'boolean',
+        },
+        replace: {
+            default: false,
+        }
+    },
+    {
+        find: {
+            name: 'only_trashed',
+            type: 'boolean',
+        },
+        replace: {
+            default: false,
+        },
+    }
 ];
 
 const properties = parser.build(customDefaults);
