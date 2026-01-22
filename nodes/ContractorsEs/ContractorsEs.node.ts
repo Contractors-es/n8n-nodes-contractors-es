@@ -71,6 +71,29 @@ export const customDefaults: Override[] = [
         replace: {
             default: false,
         },
+    },
+    {
+        // Let includes be optional free-form JSON array instead of a forced single select
+        find: {
+            name: 'includes',
+        },
+        replace: {
+            required: false,
+            type: 'string',
+            default: '',
+            placeholder: '[{"relation":"..."}]',
+            typeOptions: {
+                rows: 4,
+            },
+            routing: {
+                send: {
+                    property: 'includes',
+                    propertyInDotNotation: false,
+                    type: 'body',
+                    value: '={{ $value ? JSON.parse($value) : undefined }}',
+                },
+            },
+        },
     }
 ];
 
@@ -80,7 +103,7 @@ export class ContractorsEs implements INodeType {
     description: INodeTypeDescription = {
         displayName: 'Contractors.es',
         name: 'contractors-es',
-        icon: 'file:../../logo.svg',
+        icon: 'file:logo.svg',
         group: ['transform'],
         version: 1,
         subtitle: '={{$parameter["operation"] + ": " + $parameter["resource"]}}',
