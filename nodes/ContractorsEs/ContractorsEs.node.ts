@@ -76,20 +76,20 @@ export const customDefaults: Override[] = [
         // Let includes be optional free-form JSON array instead of a forced single select
         find: {
             name: 'include',
-            in: 'query',
+            type: 'options',
         },
         replace: {
             required: false,
             type: 'string',
             default: '',
-            placeholder: 'e.g. relations,anotherRelation',
-            typeOptions: {
-                rows: 2,
-            },
+            placeholder: 'e.g. relationA,relationB',
+            typeOptions: { rows: 2 },
+            options: [],
             routing: {
                 send: {
                     property: 'include',
                     type: 'query',
+                    propertyInDotNotation: false,
                     value: '={{ $value ? $value : undefined }}',
                 },
             },
