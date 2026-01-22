@@ -52227,7 +52227,16 @@
                     "name": {
                         "type": "string"
                     },
-                    "status": {},
+                    "status": {
+                        "enum": [
+                            "awaiting_prepayment",
+                            "pending",
+                            "completed",
+                            "protocol_sent",
+                            "accepted",
+                            "invoiced"
+                        ]
+                    },
                     "prepayment_percentage": {},
                     "prepayment_received_date": {
                         "type": "string",
@@ -52256,6 +52265,10 @@
                         "properties": {
                             "id": {
                                 "type": "integer"
+                            },
+                            "group": {
+                                "type": "string",
+                                "nullable": true
                             },
                             "stage_progress": {
                                 "type": "integer",
