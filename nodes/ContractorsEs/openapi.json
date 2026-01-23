@@ -52274,6 +52274,11 @@
                                 "type": "integer",
                                 "nullable": true
                             },
+                            "completion_date": {
+                                "type": "string",
+                                "nullable": true,
+                                "format": "date"
+                            },
                             "created_at": {
                                 "type": "string",
                                 "nullable": true,
