@@ -80,17 +80,15 @@ export const customDefaults: Override[] = [
         },
         replace: {
             required: false,
-            type: 'string',
-            default: '',
-            placeholder: 'e.g. relationA,relationB',
-            typeOptions: { rows: 2 },
-            options: [],
+            type: 'multiOptions',
+            default: [],
             routing: {
                 send: {
                     property: 'include',
                     type: 'query',
                     propertyInDotNotation: false,
-                    value: '={{ $value ? $value : undefined }}',
+                    // join selected includes as comma-separated list; empty -> omit
+                    value: '={{ Array.isArray($value) && $value.length ? $value.join(",") : undefined }}',
                 },
             },
         },
