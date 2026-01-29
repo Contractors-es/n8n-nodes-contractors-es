@@ -31,7 +31,7 @@ export const customDefaults: Override[] = [
         replace: {
             required: false,
             type: 'json',
-            default: '={{ null }}',
+            default: 'null',
             routing: {
                 send: {
                     // Omit only when value is truly absent/null; keep empty strings if user typed them
