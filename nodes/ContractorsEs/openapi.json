@@ -50133,13 +50133,17 @@
                                     "type": "string"
                                 }
                             ]
-                        }
+                        },
+                        "nullable": true,
+                        "default": null
                     },
                     "columns_changed": {
                         "type": "array",
                         "items": {
                             "type": "string"
-                        }
+                        },
+                        "nullable": true,
+                        "default": null
                     },
                     "description": {
                         "type": "string",

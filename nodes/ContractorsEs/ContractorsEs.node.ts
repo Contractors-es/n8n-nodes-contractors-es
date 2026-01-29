@@ -8,6 +8,28 @@ const loginUrl = '/api/auth/login';
 
 export const customDefaults: Override[] = [
     {
+        // Make all PATCH params optional and drop empty payload fields
+        find: {
+            displayOptions: {
+                show: {
+                    // n8n stores the operation as "<VERB> <path>"
+                    operation: [/^PATCH /],
+                },
+            },
+        },
+        replace: {
+            required: false,
+            type: 'json',
+            default: null,
+            routing: {
+                send: {
+                    // Omit only when value is truly absent/null; keep empty strings if user typed them
+                    value: '={{ $value === null ? undefined : $value }}',
+                },
+            },
+        },
+    },
+    {
         // Find field by fields matching
         find: {
             name: 'username',
