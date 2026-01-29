@@ -11,12 +11,27 @@ export const customDefaults: Override[] = [
         // Make all PATCH params optional and drop empty payload fields
         find: (field: any) => {
             const ops = field?.displayOptions?.show?.operation;
-            return Array.isArray(ops) && ops.some((op: unknown) => typeof op === 'string' && /^patch /i.test(op));
+            if (!Array.isArray(ops) || !ops.some((op: unknown) => typeof op === 'string' && /^patch /i.test(op))) {
+                return false;
+            }
+
+            // Skip notices and path/query parameters; target only body payload fields
+            if (field?.type === 'notice') {
+                return false;
+            }
+
+            const send = field?.routing?.send;
+            if (!send) {
+                return false;
+            }
+
+            const sendType = (send as any).type;
+            return sendType === undefined || sendType === null || sendType === 'body';
         },
         replace: {
             required: false,
             type: 'json',
-            default: null,
+            default: '={{ null }}',
             routing: {
                 send: {
                     // Omit only when value is truly absent/null; keep empty strings if user typed them
