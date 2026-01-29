@@ -33,7 +33,7 @@ export const customDefaults: Override[] = [
 
             // Mutate in place to keep existing routing.send.property/type
             field.required = false;
-            field.default = 'null';
+            field.default = null;
             field.type = 'json';
             field.routing.send = {
                 ...field.routing.send,
