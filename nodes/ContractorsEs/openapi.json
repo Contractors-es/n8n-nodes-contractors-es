@@ -33184,7 +33184,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33260,7 +33260,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33335,7 +33335,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33418,7 +33418,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33479,7 +33479,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33559,7 +33559,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33622,7 +33622,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33677,7 +33677,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33753,7 +33753,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33838,7 +33838,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33917,7 +33917,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -33996,7 +33996,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -34062,7 +34062,7 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork"
+                                "scopesOfWork"
                             ]
                         },
                         "name": "include",
@@ -46735,11 +46735,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -46809,11 +46808,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -46882,11 +46880,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -46950,7 +46947,6 @@
                                                         "project_id",
                                                         "project_stage_id",
                                                         "estimator_id",
-                                                        "scope_of_work_id",
                                                         "status",
                                                         "date",
                                                         "approved_date",
@@ -47001,7 +46997,6 @@
                                                                     "project_id",
                                                                     "project_stage_id",
                                                                     "estimator_id",
-                                                                    "scope_of_work_id",
                                                                     "status",
                                                                     "date",
                                                                     "approved_date",
@@ -47047,7 +47042,7 @@
                                                         "materials",
                                                         "materials.inventory",
                                                         "projectStage",
-                                                        "scopeOfWork",
+                                                        "scopesOfWork",
                                                         "estimator",
                                                         "invoices"
                                                     ]
@@ -47128,11 +47123,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47187,11 +47181,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47265,11 +47258,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47326,11 +47318,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47379,11 +47370,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47453,11 +47443,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47536,11 +47525,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47613,11 +47601,10 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopeOfWork",
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -50135,8 +50122,25 @@
                             "all"
                         ]
                     },
-                    "payload": {},
-                    "columns_changed": {},
+                    "payload": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "array"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        }
+                    },
+                    "columns_changed": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
                     "description": {
                         "type": "string",
                         "nullable": true
@@ -52120,9 +52124,6 @@
                         "type": "integer",
                         "nullable": true
                     },
-                    "scope_of_work_id": {
-                        "type": "integer"
-                    },
                     "description": {
                         "type": "string",
                         "nullable": true
@@ -52145,45 +52146,13 @@
                         "nullable": true,
                         "format": "date"
                     },
-                    "calculate_by": {
-                        "type": "integer"
-                    },
-                    "hour_rate": {},
-                    "hour_rate_currency": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "unit": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "quantity": {},
-                    "unit_rate": {},
-                    "unit_rate_currency": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "est_hours_per_unit": {},
-                    "est_mandays": {},
-                    "est_labor": {},
-                    "est_labor_currency": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "material": {
-                        "type": "integer"
-                    },
-                    "est_material_per_unit": {},
-                    "est_material_per_unit_currency": {
-                        "type": "string",
-                        "nullable": true
-                    },
-                    "est_material": {},
-                    "est_material_currency": {
-                        "type": "string",
-                        "nullable": true
-                    },
                     "markup_ratio": {},
+                    "misc_est_cost": {},
+                    "misc_est_cost_currency": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "misc_est_mandays": {},
                     "co_amount": {},
                     "co_amount_currency": {
                         "type": "string",
