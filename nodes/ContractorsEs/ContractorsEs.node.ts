@@ -9,13 +9,9 @@ const loginUrl = '/api/auth/login';
 export const customDefaults: Override[] = [
     {
         // Make all PATCH params optional and drop empty payload fields
-        find: {
-            displayOptions: {
-                show: {
-                    // n8n stores the operation as "<VERB> <path>"
-                    operation: [/^PATCH /],
-                },
-            },
+        find: (field: any) => {
+            const ops = field?.displayOptions?.show?.operation;
+            return Array.isArray(ops) && ops.some((op: unknown) => typeof op === 'string' && op.startsWith('PATCH '));
         },
         replace: {
             required: false,
