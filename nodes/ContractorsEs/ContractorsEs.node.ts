@@ -33,11 +33,11 @@ export const customDefaults: Override[] = [
 
             // Mutate in place to keep existing routing.send.property/type
             field.required = false;
-            field.default = null;
+            field.default = '"KEEP_OLD_VALUE"';
             field.type = 'json';
             field.routing.send = {
                 ...field.routing.send,
-                value: '={{ $value === null ? undefined : $value }}',
+                value: '={{ $value === "KEEP_OLD_VALUE" ? undefined : $value }}',
             };
             return false; // already updated, skip replace
         },
