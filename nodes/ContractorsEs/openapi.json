@@ -25875,17 +25875,6 @@
                         "name": "project",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "company",
-                                "contacts"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -26121,19 +26110,7 @@
                 "operationId": "post-api-contractors-projects-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "company",
-                                "contacts"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -32538,16 +32515,6 @@
                         "name": "scopes_of_work",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -32812,16 +32779,6 @@
                         "name": "project",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -33474,16 +33431,6 @@
                         "name": "change_order",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -33748,16 +33695,6 @@
                         "name": "project",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -34898,16 +34835,6 @@
                         "name": "project_stage",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -35140,18 +35067,7 @@
                 "operationId": "post-api-contractors-project-stages-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -35805,16 +35721,6 @@
                         "name": "stage",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -36079,16 +35985,6 @@
                         "name": "project",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -38045,20 +37941,6 @@
                         "name": "project_bidding",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "company",
-                                "contacts",
-                                "proposals",
-                                "filledProposals",
-                                "projects"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -38303,22 +38185,7 @@
                 "operationId": "post-api-contractors-project-biddings-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "company",
-                                "contacts",
-                                "proposals",
-                                "filledProposals",
-                                "projects"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -42729,20 +42596,6 @@
                         "name": "project_proposal",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "projectBidding",
-                                "scopesOfWork",
-                                "materials",
-                                "project",
-                                "fields"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -42987,22 +42840,7 @@
                 "operationId": "post-api-contractors-project-proposals-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "projectBidding",
-                                "scopesOfWork",
-                                "materials",
-                                "project",
-                                "fields"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -43521,16 +43359,6 @@
                         "name": "scopes_of_work",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -43795,16 +43623,6 @@
                         "name": "project_proposal",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -44948,18 +44766,6 @@
                         "name": "invoice",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "project",
-                                "projectStage",
-                                "changeOrder"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -45198,20 +45004,7 @@
                 "operationId": "post-api-contractors-invoices-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "project",
-                                "projectStage",
-                                "changeOrder"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -45726,16 +45519,6 @@
                         "name": "scopes_progress",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -46000,16 +45783,6 @@
                         "name": "invoice",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -47176,21 +46949,6 @@
                         "name": "change_order",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "materials",
-                                "materials.inventory",
-                                "projectStage",
-                                "scopesOfWork",
-                                "estimator",
-                                "invoices"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -47438,23 +47196,7 @@
                 "operationId": "post-api-contractors-change-orders-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "materials",
-                                "materials.inventory",
-                                "projectStage",
-                                "scopesOfWork",
-                                "estimator",
-                                "invoices"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {

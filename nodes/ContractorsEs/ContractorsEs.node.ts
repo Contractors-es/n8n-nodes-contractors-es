@@ -26,19 +26,22 @@ export const customDefaults: Override[] = [
             }
 
             const sendType = (send as any).type;
-            return sendType === undefined || sendType === null || sendType === 'body';
+            const isBody = sendType === undefined || sendType === null || sendType === 'body';
+            if (!isBody) {
+                return false;
+            }
+
+            // Mutate in place to keep existing routing.send.property/type
+            field.required = false;
+            field.default = 'null';
+            field.type = 'json';
+            field.routing.send = {
+                ...field.routing.send,
+                value: '={{ $value === null ? undefined : $value }}',
+            };
+            return false; // already updated, skip replace
         },
-        replace: {
-            required: false,
-            type: 'json',
-            default: 'null',
-            routing: {
-                send: {
-                    // Omit only when value is truly absent/null; keep empty strings if user typed them
-                    value: '={{ $value === null ? undefined : $value }}',
-                },
-            },
-        },
+        replace: {},
     },
     {
         // Find field by fields matching
@@ -69,7 +72,7 @@ export const customDefaults: Override[] = [
             },
         },
         replace: {
-            "default": '={{ $credentials.password }}',
+            default: '={{ $credentials.password }}',
         },
     },
     {
