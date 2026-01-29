@@ -11,7 +11,7 @@ export const customDefaults: Override[] = [
         // Make all PATCH params optional and drop empty payload fields
         find: (field: any) => {
             const ops = field?.displayOptions?.show?.operation;
-            return Array.isArray(ops) && ops.some((op: unknown) => typeof op === 'string' && op.startsWith('PATCH '));
+            return Array.isArray(ops) && ops.some((op: unknown) => typeof op === 'string' && /^patch /i.test(op));
         },
         replace: {
             required: false,
