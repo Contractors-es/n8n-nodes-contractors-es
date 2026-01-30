@@ -13,6 +13,9 @@ export const customDefaults: Override[] = [
         replace: (field: any) => {
             const existingPreSend = field.routing.request.preSend;
             const logFn = async function logRequest(this: IExecuteSingleFunctions, requestOptions: IHttpRequestOptions): Promise<IHttpRequestOptions> {
+                console.log('Request Options:', requestOptions);
+                console.warn('Logging request options is for development purposes only. Avoid logging sensitive information in production environments.');
+                console.error('Request Options error:', requestOptions);
                 this.logger?.info('[Contractors.es] Request', {
                     method: requestOptions.method,
                     url: requestOptions.url,
