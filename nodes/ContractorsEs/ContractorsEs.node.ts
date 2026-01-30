@@ -33,11 +33,41 @@ export const customDefaults: Override[] = [
 
             // Mutate in place to keep existing routing.send.property/type
             field.required = false;
-            field.default = 'DO_NOT_UPDATE';
-            field.type = 'string';
+            // always offer DO_NOT_UPDATE sentinel
+            const sentinel = 'DO_NOT_UPDATE';
+
+            // handle booleans -> select with sentinel
+            if (field.type === 'boolean') {
+                field.type = 'options';
+                field.options = [
+                    { name: 'Checked', value: true },
+                    { name: 'Not checked', value: false },
+                    { name: sentinel, value: sentinel },
+                ];
+            }
+
+            // handle options / multiOptions: add sentinel option
+            if (field.type === 'options' || field.type === 'multiOptions') {
+                const options = Array.isArray(field.options) ? field.options : [];
+                const hasSentinel = options.some((o: any) => o?.value === sentinel);
+                if (!hasSentinel) {
+                    options.push({ name: sentinel, value: sentinel });
+                }
+                field.options = options;
+            }
+
+            // handle numbers -> treat as string
+            if (field.type === 'number' || field.type === 'integer') {
+                field.type = 'string';
+            }
+
+            // always set default sentinel
+            field.default = sentinel;
+
             field.routing.send = {
                 ...field.routing.send,
-                value: '={{ $value === "DO_NOT_UPDATE" ? undefined : $value }}',
+                // omit when sentinel appears (works for single, multi, object/array via JSON check)
+                value: '={{ (() => { const v = $value; const json = (() => { try { return JSON.stringify(v); } catch (e) { return String(v); } })(); if (json && json.includes("DO_NOT_UPDATE")) { return undefined; } return v; })() }}',
             };
             return false; // already updated, skip replace
         },
