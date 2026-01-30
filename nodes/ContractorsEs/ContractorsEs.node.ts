@@ -1,4 +1,4 @@
-import { IExecuteSingleFunctions, IHttpRequestOptions, INodeType, INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
+import { INodeType, INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
 import { N8NPropertiesBuilder, N8NPropertiesBuilderConfig, Override } from '@devlikeapro/n8n-openapi-node';
 import * as doc from './openapi.json';
 
@@ -7,43 +7,6 @@ const parser = new N8NPropertiesBuilder(doc, config);
 const loginUrl = '/api/auth/login';
 
 export const customDefaults: Override[] = [
-    {
-        // Attach a preSend hook to every routing.request so each HTTP call is logged
-        find: (field: any) => Boolean(field?.routing?.request),
-        replace: (field: any) => {
-            console.log('Adding request logging to field:', field.name);
-
-            const existingPreSend = field.routing.request.preSend;
-            const logFn = async function logRequest(this: IExecuteSingleFunctions, requestOptions: IHttpRequestOptions): Promise<IHttpRequestOptions> {
-                console.log('Request Options:', requestOptions);
-                console.warn('Logging request options is for development purposes only. Avoid logging sensitive information in production environments.');
-                console.error('Request Options error:', requestOptions);
-                this.logger?.info('[Contractors.es] Request', {
-                    method: requestOptions.method,
-                    url: requestOptions.url,
-                    headers: requestOptions.headers,
-                    body: requestOptions.body,
-                    qs: (requestOptions as { qs?: unknown }).qs,
-                });
-                return requestOptions;
-            };
-
-            const mergedPreSend = Array.isArray(existingPreSend)
-                ? [...existingPreSend, logFn]
-                : [logFn];
-
-            return {
-                ...field,
-                routing: {
-                    ...field.routing,
-                    request: {
-                        ...field.routing.request,
-                        preSend: mergedPreSend,
-                    },
-                },
-            };
-        },
-    },
     {
         // Make all PATCH params optional and drop empty payload fields
         find: (field: any) => {
@@ -104,7 +67,7 @@ export const customDefaults: Override[] = [
             field.routing.send = {
                 ...field.routing.send,
                 // omit when sentinel appears (works for single, multi, object/array via JSON check)
-                value: '={{ (() => { const v = $value; const json = (() => { try { return JSON.stringify(v); } catch (e) { return String(v); } })(); if (json && json.includes("DO_NOT_UPDATE")) { return undefined; } return v; })() }}',
+                value: '={{ (() => { const v = $value; const json = (typeof v === "string") ? v : (() => { try { return JSON.stringify(v); } catch (e) { return String(v); } })() : undefined; if (json && json.includes("DO_NOT_UPDATE")) { return undefined; } return v; })() }}',
             };
             return false; // already updated, skip replace
         },
