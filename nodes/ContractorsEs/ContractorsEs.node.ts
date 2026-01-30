@@ -1,4 +1,4 @@
-import { INodeType, INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
+import { DeclarativeRestApiSettings, IExecuteSingleFunctions, IHttpRequestOptions, INodeType, INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
 import { N8NPropertiesBuilder, N8NPropertiesBuilderConfig, Override } from '@devlikeapro/n8n-openapi-node';
 import * as doc from './openapi.json';
 
@@ -190,7 +190,19 @@ export class ContractorsEs implements INodeType {
                 'Content-Type': 'application/json',
             },
             baseURL: '={{$credentials.url}}',
-        },
+            preSend: [
+                async function logRequest(this: IExecuteSingleFunctions, requestOptions: IHttpRequestOptions): Promise<IHttpRequestOptions> {
+                    console.log('[Contractors.es] Request', {
+                        method: requestOptions.method,
+                        url: requestOptions.url,
+                        headers: requestOptions.headers,
+                        body: requestOptions.body,
+                        qs: (requestOptions as { qs?: unknown }).qs,
+                    });
+                    return requestOptions;
+                },
+            ],
+        } as DeclarativeRestApiSettings.HttpRequestOptions,
         properties: properties,
     };
 }
