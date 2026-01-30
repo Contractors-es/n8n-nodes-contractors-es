@@ -11,6 +11,8 @@ export const customDefaults: Override[] = [
         // Attach a preSend hook to every routing.request so each HTTP call is logged
         find: (field: any) => Boolean(field?.routing?.request),
         replace: (field: any) => {
+            console.log('Adding request logging to field:', field.name);
+
             const existingPreSend = field.routing.request.preSend;
             const logFn = async function logRequest(this: IExecuteSingleFunctions, requestOptions: IHttpRequestOptions): Promise<IHttpRequestOptions> {
                 console.log('Request Options:', requestOptions);
