@@ -1,4 +1,4 @@
-import { DeclarativeRestApiSettings, IExecuteSingleFunctions, IHttpRequestOptions, INodeType, INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
+import { IExecuteSingleFunctions, IHttpRequestOptions, INodeType, INodeTypeDescription, NodeConnectionTypes } from 'n8n-workflow';
 import { N8NPropertiesBuilder, N8NPropertiesBuilderConfig, Override } from '@devlikeapro/n8n-openapi-node';
 import * as doc from './openapi.json';
 
