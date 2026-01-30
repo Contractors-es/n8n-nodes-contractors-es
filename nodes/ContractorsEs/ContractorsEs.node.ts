@@ -8,6 +8,38 @@ const loginUrl = '/api/auth/login';
 
 export const customDefaults: Override[] = [
     {
+        // Attach a preSend hook to every routing.request so each HTTP call is logged
+        find: (field: any) => Boolean(field?.routing?.request),
+        replace: (field: any) => {
+            const existingPreSend = field.routing.request.preSend;
+            const logFn = async function logRequest(this: IExecuteSingleFunctions, requestOptions: IHttpRequestOptions): Promise<IHttpRequestOptions> {
+                this.logger?.info('[Contractors.es] Request', {
+                    method: requestOptions.method,
+                    url: requestOptions.url,
+                    headers: requestOptions.headers,
+                    body: requestOptions.body,
+                    qs: (requestOptions as { qs?: unknown }).qs,
+                });
+                return requestOptions;
+            };
+
+            const mergedPreSend = Array.isArray(existingPreSend)
+                ? [...existingPreSend, logFn]
+                : [logFn];
+
+            return {
+                ...field,
+                routing: {
+                    ...field.routing,
+                    request: {
+                        ...field.routing.request,
+                        preSend: mergedPreSend,
+                    },
+                },
+            };
+        },
+    },
+    {
         // Make all PATCH params optional and drop empty payload fields
         find: (field: any) => {
             const ops = field?.displayOptions?.show?.operation;
@@ -189,20 +221,8 @@ export class ContractorsEs implements INodeType {
                 Accept: 'application/json',
                 'Content-Type': 'application/json',
             },
-            baseURL: '={{$credentials.url}}',
-            preSend: [
-                async function logRequest(this: IExecuteSingleFunctions, requestOptions: IHttpRequestOptions): Promise<IHttpRequestOptions> {
-                    console.log('[Contractors.es] Request', {
-                        method: requestOptions.method,
-                        url: requestOptions.url,
-                        headers: requestOptions.headers,
-                        body: requestOptions.body,
-                        qs: (requestOptions as { qs?: unknown }).qs,
-                    });
-                    return requestOptions;
-                },
-            ],
-        } as DeclarativeRestApiSettings.HttpRequestOptions,
+            baseURL: '={{$credentials.url}}'
+        },
         properties: properties,
     };
 }
