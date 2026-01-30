@@ -67,7 +67,8 @@ export const customDefaults: Override[] = [
             field.routing.send = {
                 ...field.routing.send,
                 // omit when sentinel appears (works for single, multi, object/array via JSON check)
-                value: '={{ (() => { const v = $value; const json = (typeof v === "string") ? v : (() => { try { return JSON.stringify(v); } catch (e) { return String(v); } })() : undefined; if (json && json.includes("DO_NOT_UPDATE")) { return undefined; } return v; })() }}',
+                value: '={{ $value === "DO_NOT_UPDATE" ? undefined : $value }}',
+                //value: '={{ (() => { const v = $value; const json = (typeof v === "string") ? v : (() => { try { return JSON.stringify(v); } catch (e) { return String(v); } })() : undefined; if (json && json.includes("DO_NOT_UPDATE")) { return undefined; } return v; })() }}',
             };
             return false; // already updated, skip replace
         },
