@@ -36,7 +36,7 @@ export const customDefaults: Override[] = [
             }
 
             // always offer DO_NOT_UPDATE sentinel
-            const sentinel = 'DO_NOT_UPDATE';
+            const sentinel = ops.some((op: unknown) => typeof op === 'string' && /^patch /i.test(op)) ? 'DO_NOT_UPDATE' : 'DO_NOT_SET';
 
             // handle booleans -> select with sentinel
             if (field.type === 'boolean') {
@@ -77,7 +77,7 @@ export const customDefaults: Override[] = [
             field.routing.send = {
                 ...field.routing.send,
                 // omit when sentinel appears; if value is JSON string, parse before sending
-                value: '={{ (() => { const raw = $value; const text = (typeof raw === "string" ? raw : JSON.stringify(raw)); if (text && text.includes("DO_NOT_UPDATE")) { return undefined; } return ' + oldSendValue + '; })() }}'
+                value: '={{ (() => { const raw = $value; const text = (typeof raw === "string" ? raw : JSON.stringify(raw)); if (text && text.includes("' + sentinel + '")) { return undefined; } return ' + oldSendValue + '; })() }}'
             };
             return false; // already updated, skip replace
         },
