@@ -77,7 +77,7 @@ export const customDefaults: Override[] = [
             field.routing.send = {
                 ...field.routing.send,
                 // omit when sentinel appears; if value is JSON string, parse before sending
-                value: '={{ (() => { const raw = $value; const text = (typeof raw === "string" ? raw : JSON.stringify(raw)); if (text && text.includes("' + sentinel + '")) { return undefined; } return ' + oldSendValue + '; })() }}'
+                value: '={{ (() => { const raw = $value; const text = (typeof raw === "string" ? raw : JSON.stringify(raw)); if (text && (text.includes("DO_NOT_UPDATE") || text.includes("DO_NOT_SET"))) { return undefined; } return ' + oldSendValue + '; })() }}'
             };
             return false; // already updated, skip replace
         },
