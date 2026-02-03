@@ -11,7 +11,7 @@ export const customDefaults: Override[] = [
         // Make all PATCH params optional and drop empty payload fields
         find: (field: any) => {
             const ops = field?.displayOptions?.show?.operation;
-            if (!Array.isArray(ops) || !ops.some((op: unknown) => typeof op === 'string' && /^patch /i.test(op))) {
+            if (!Array.isArray(ops) || !ops.some((op: unknown) => typeof op === 'string' && /^(patch|post) /i.test(op))) {
                 return false;
             }
 
@@ -31,8 +31,10 @@ export const customDefaults: Override[] = [
                 return false;
             }
 
-            // Mutate in place to keep existing routing.send.property/type
-            field.required = false;
+            if (field.required === true) {
+                return false;
+            }
+
             // always offer DO_NOT_UPDATE sentinel
             const sentinel = 'DO_NOT_UPDATE';
 
