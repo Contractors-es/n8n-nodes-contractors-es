@@ -804,7 +804,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -846,7 +847,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -4069,7 +4071,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -4111,7 +4114,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -7341,7 +7345,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -7383,7 +7388,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -10163,7 +10169,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -10205,7 +10212,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -12270,7 +12278,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -12312,7 +12321,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -25208,7 +25218,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -25250,7 +25261,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -25680,7 +25692,8 @@
                                                         "external_id",
                                                         "status",
                                                         "tm",
-                                                        "customer_type"
+                                                        "customer_type",
+                                                        "job_progress"
                                                     ]
                                                 },
                                                 "operator": {
@@ -25724,7 +25737,8 @@
                                                                     "external_id",
                                                                     "status",
                                                                     "tm",
-                                                                    "customer_type"
+                                                                    "customer_type",
+                                                                    "job_progress"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -25875,6 +25889,17 @@
                         "name": "project",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "company",
+                                "contacts"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -26110,7 +26135,19 @@
                 "operationId": "post-api-contractors-projects-batch"
             },
             "patch": {
-                "parameters": [],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "company",
+                                "contacts"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -32515,6 +32552,16 @@
                         "name": "scopes_of_work",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopeOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -32779,6 +32826,16 @@
                         "name": "project",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopeOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -33141,7 +33198,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -33217,7 +33279,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -33292,13 +33359,183 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
                         "in": "query"
                     }
                 ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "scopes": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "disapproved",
+                                                        "approved",
+                                                        "sent",
+                                                        "favoritesProjects",
+                                                        "mine"
+                                                    ]
+                                                },
+                                                "parameters": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "name"
+                                            ]
+                                        }
+                                    },
+                                    "filters": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "and",
+                                                        "or"
+                                                    ]
+                                                },
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "co_number",
+                                                        "gc_co_number",
+                                                        "title",
+                                                        "type",
+                                                        "project_id",
+                                                        "project_stage_id",
+                                                        "estimator_id",
+                                                        "scope_of_work_id",
+                                                        "status",
+                                                        "date",
+                                                        "approved_date",
+                                                        "billed",
+                                                        "billed_date",
+                                                        "external_id"
+                                                    ]
+                                                },
+                                                "operator": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "<",
+                                                        "<=",
+                                                        ">",
+                                                        ">=",
+                                                        "=",
+                                                        "!=",
+                                                        "like",
+                                                        "not like",
+                                                        "in",
+                                                        "not in",
+                                                        "all in",
+                                                        "any in"
+                                                    ]
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                },
+                                                "nested": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "and",
+                                                                    "or"
+                                                                ]
+                                                            },
+                                                            "field": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "co_number",
+                                                                    "gc_co_number",
+                                                                    "title",
+                                                                    "type",
+                                                                    "project_id",
+                                                                    "project_stage_id",
+                                                                    "estimator_id",
+                                                                    "scope_of_work_id",
+                                                                    "status",
+                                                                    "date",
+                                                                    "approved_date",
+                                                                    "billed",
+                                                                    "billed_date",
+                                                                    "external_id"
+                                                                ]
+                                                            },
+                                                            "operator": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "<",
+                                                                    "<=",
+                                                                    ">",
+                                                                    ">=",
+                                                                    "=",
+                                                                    "!=",
+                                                                    "like",
+                                                                    "not like",
+                                                                    "in",
+                                                                    "not in",
+                                                                    "all in",
+                                                                    "any in"
+                                                                ]
+                                                            },
+                                                            "value": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "includes": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "relation": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "materials",
+                                                        "materials.inventory",
+                                                        "projectStage",
+                                                        "scopeOfWork",
+                                                        "estimator",
+                                                        "invoices"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -33375,7 +33612,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -33431,6 +33673,21 @@
                         "name": "change_order",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -33506,7 +33763,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -33569,7 +33831,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -33624,7 +33891,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -33695,6 +33967,21 @@
                         "name": "project",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -33775,7 +34062,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -33854,7 +34146,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -33933,7 +34230,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -33999,7 +34301,12 @@
                         "schema": {
                             "type": "string",
                             "enum": [
-                                "scopesOfWork"
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
                             ]
                         },
                         "name": "include",
@@ -34155,7 +34462,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -34197,7 +34505,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -34586,7 +34895,8 @@
                                                         "name",
                                                         "status",
                                                         "project_id",
-                                                        "stage_number"
+                                                        "stage_number",
+                                                        "group"
                                                     ]
                                                 },
                                                 "operator": {
@@ -34627,7 +34937,8 @@
                                                                     "name",
                                                                     "status",
                                                                     "project_id",
-                                                                    "stage_number"
+                                                                    "stage_number",
+                                                                    "group"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -34835,6 +35146,16 @@
                         "name": "project_stage",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -35067,7 +35388,18 @@
                 "operationId": "post-api-contractors-project-stages-batch"
             },
             "patch": {
-                "parameters": [],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -35470,7 +35802,8 @@
                                                         "name",
                                                         "status",
                                                         "stage_number",
-                                                        "project_id"
+                                                        "project_id",
+                                                        "group"
                                                     ]
                                                 },
                                                 "operator": {
@@ -35511,7 +35844,8 @@
                                                                     "name",
                                                                     "status",
                                                                     "stage_number",
-                                                                    "project_id"
+                                                                    "project_id",
+                                                                    "group"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -35721,6 +36055,16 @@
                         "name": "stage",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -35985,6 +36329,16 @@
                         "name": "project",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -37251,7 +37605,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -37293,7 +37648,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -37941,6 +38297,20 @@
                         "name": "project_bidding",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "company",
+                                "contacts",
+                                "proposals",
+                                "filledProposals",
+                                "projects"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -38185,7 +38555,22 @@
                 "operationId": "post-api-contractors-project-biddings-batch"
             },
             "patch": {
-                "parameters": [],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "company",
+                                "contacts",
+                                "proposals",
+                                "filledProposals",
+                                "projects"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -41912,7 +42297,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -41954,7 +42340,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -42596,6 +42983,20 @@
                         "name": "project_proposal",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "projectBidding",
+                                "scopesOfWork",
+                                "materials",
+                                "project",
+                                "fields"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -42840,7 +43241,22 @@
                 "operationId": "post-api-contractors-project-proposals-batch"
             },
             "patch": {
-                "parameters": [],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "projectBidding",
+                                "scopesOfWork",
+                                "materials",
+                                "project",
+                                "fields"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -43359,6 +43775,16 @@
                         "name": "scopes_of_work",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopeOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -43623,6 +44049,16 @@
                         "name": "project_proposal",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopeOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -44083,7 +44519,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -44125,7 +44562,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -44766,6 +45204,18 @@
                         "name": "invoice",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectStage",
+                                "changeOrder"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -45004,7 +45454,20 @@
                 "operationId": "post-api-contractors-invoices-batch"
             },
             "patch": {
-                "parameters": [],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectStage",
+                                "changeOrder"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -45271,7 +45734,7 @@
                         "description": "Validation error"
                     }
                 },
-                "summary": "Create contr invoice scopes progress",
+                "summary": "Create contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45344,7 +45807,7 @@
                         "description": "Unauthorized"
                     }
                 },
-                "summary": "Get a list of contr invoice scopes progress",
+                "summary": "Get a list of contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45419,7 +45882,7 @@
                         "description": "Unauthorized"
                     }
                 },
-                "summary": "Search for contr invoice scopes progress",
+                "summary": "Search for contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45496,7 +45959,7 @@
                         "description": "Resource not found"
                     }
                 },
-                "summary": "Get contr invoice scopes progress",
+                "summary": "Get contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45519,6 +45982,16 @@
                         "name": "scopes_progress",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopeOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -45559,7 +46032,7 @@
                         "description": "Validation error"
                     }
                 },
-                "summary": "Update contr invoice scopes progress",
+                "summary": "Update contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45627,7 +46100,7 @@
                         "description": "Resource not found"
                     }
                 },
-                "summary": "Delete contr invoice scopes progress",
+                "summary": "Delete contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45690,7 +46163,7 @@
                         "description": "Resource not found"
                     }
                 },
-                "summary": "Restore contr invoice scopes progress",
+                "summary": "Restore contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45768,7 +46241,7 @@
                         "description": "Resource not found"
                     }
                 },
-                "summary": "Create a batch of contr invoice scopes progress",
+                "summary": "Create a batch of contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45783,6 +46256,16 @@
                         "name": "invoice",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "scopeOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -45836,7 +46319,7 @@
                         "description": "Resource not found"
                     }
                 },
-                "summary": "Update a batch of contr invoice scopes progress",
+                "summary": "Update a batch of contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45920,7 +46403,7 @@
                         "description": "Resource not found"
                     }
                 },
-                "summary": "Delete a batch of contr invoice scopes progress",
+                "summary": "Delete a batch of contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -45999,7 +46482,7 @@
                         "description": "Resource not found"
                     }
                 },
-                "summary": "Restore a batch of contr invoice scopes progress",
+                "summary": "Restore a batch of contr invoice scope progress",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -46057,7 +46540,7 @@
                         "description": "Validation error"
                     }
                 },
-                "summary": "Associate contr invoice scopes progress with contr invoice",
+                "summary": "Associate contr invoice scope progress with contr invoice",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -46123,7 +46606,7 @@
                         "description": "Validation error"
                     }
                 },
-                "summary": "Dissociate contr invoice scopes progress from contr invoice",
+                "summary": "Dissociate contr invoice scope progress from contr invoice",
                 "tags": [
                     "Invoice Scope Progress Relation Api"
                 ],
@@ -46243,7 +46726,8 @@
                                                         "event",
                                                         "active",
                                                         "created_by",
-                                                        "class_name"
+                                                        "class_name",
+                                                        "url"
                                                     ]
                                                 },
                                                 "operator": {
@@ -46285,7 +46769,8 @@
                                                                     "event",
                                                                     "active",
                                                                     "created_by",
-                                                                    "class_name"
+                                                                    "class_name",
+                                                                    "url"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -46511,7 +46996,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopesOfWork",
+                                "scopeOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -46584,7 +47069,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopesOfWork",
+                                "scopeOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -46656,7 +47141,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopesOfWork",
+                                "scopeOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -46720,6 +47205,7 @@
                                                         "project_id",
                                                         "project_stage_id",
                                                         "estimator_id",
+                                                        "scope_of_work_id",
                                                         "status",
                                                         "date",
                                                         "approved_date",
@@ -46770,6 +47256,7 @@
                                                                     "project_id",
                                                                     "project_stage_id",
                                                                     "estimator_id",
+                                                                    "scope_of_work_id",
                                                                     "status",
                                                                     "date",
                                                                     "approved_date",
@@ -46815,7 +47302,7 @@
                                                         "materials",
                                                         "materials.inventory",
                                                         "projectStage",
-                                                        "scopesOfWork",
+                                                        "scopeOfWork",
                                                         "estimator",
                                                         "invoices"
                                                     ]
@@ -46899,7 +47386,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopesOfWork",
+                                "scopeOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -46949,6 +47436,21 @@
                         "name": "change_order",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -47019,7 +47521,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopesOfWork",
+                                "scopeOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47079,7 +47581,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopesOfWork",
+                                "scopeOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47131,7 +47633,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopesOfWork",
+                                "scopeOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47196,7 +47698,23 @@
                 "operationId": "post-api-contractors-change-orders-batch"
             },
             "patch": {
-                "parameters": [],
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "materials",
+                                "materials.inventory",
+                                "projectStage",
+                                "scopeOfWork",
+                                "estimator",
+                                "invoices"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -47270,7 +47788,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopesOfWork",
+                                "scopeOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47346,7 +47864,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopesOfWork",
+                                "scopeOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -49864,29 +50382,8 @@
                             "all"
                         ]
                     },
-                    "payload": {
-                        "type": "array",
-                        "items": {
-                            "anyOf": [
-                                {
-                                    "type": "array"
-                                },
-                                {
-                                    "type": "string"
-                                }
-                            ]
-                        },
-                        "nullable": true,
-                        "default": null
-                    },
-                    "columns_changed": {
-                        "type": "array",
-                        "items": {
-                            "type": "string"
-                        },
-                        "nullable": true,
-                        "default": null
-                    },
+                    "payload": {},
+                    "columns_changed": {},
                     "description": {
                         "type": "string",
                         "nullable": true
@@ -51559,6 +52056,7 @@
                             }
                         }
                     },
+                    "tax_rounding_method": {},
                     "status": {
                         "enum": [
                             "awarded",
@@ -52217,6 +52715,7 @@
                             }
                         }
                     },
+                    "tax_rounding_method": {},
                     "awarded": {
                         "type": "integer"
                     },
@@ -52384,6 +52883,7 @@
                             }
                         }
                     },
+                    "tax_rounding_method": {},
                     "amount": {},
                     "amount_currency": {
                         "type": "string"
@@ -52431,17 +52931,7 @@
             "InvoiceScopeProgress": {
                 "title": "InvoiceScopeProgress",
                 "type": "object",
-                "properties": {
-                    "invoice_id": {
-                        "type": "integer"
-                    },
-                    "scope_of_work_id": {
-                        "type": "integer"
-                    },
-                    "scope_progress": {
-                        "type": "integer"
-                    }
-                }
+                "properties": []
             },
             "InvoiceScopeProgressResource": {
                 "title": "InvoiceScopeProgressResource",
@@ -52451,11 +52941,7 @@
                     },
                     {
                         "type": "object",
-                        "properties": {
-                            "id": {
-                                "type": "integer"
-                            }
-                        }
+                        "properties": []
                     }
                 ]
             },
