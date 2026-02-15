@@ -25889,17 +25889,6 @@
                         "name": "project",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "company",
-                                "contacts"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -26135,19 +26124,7 @@
                 "operationId": "post-api-contractors-projects-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "company",
-                                "contacts"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -32552,16 +32529,6 @@
                         "name": "scopes_of_work",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -32826,16 +32793,6 @@
                         "name": "project",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -33201,7 +33158,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -33282,7 +33239,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -33362,7 +33319,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -33426,7 +33383,6 @@
                                                         "project_id",
                                                         "project_stage_id",
                                                         "estimator_id",
-                                                        "scope_of_work_id",
                                                         "status",
                                                         "date",
                                                         "approved_date",
@@ -33477,7 +33433,6 @@
                                                                     "project_id",
                                                                     "project_stage_id",
                                                                     "estimator_id",
-                                                                    "scope_of_work_id",
                                                                     "status",
                                                                     "date",
                                                                     "approved_date",
@@ -33523,7 +33478,7 @@
                                                         "materials",
                                                         "materials.inventory",
                                                         "projectStage",
-                                                        "scopeOfWork",
+                                                        "scopesOfWork",
                                                         "estimator",
                                                         "invoices"
                                                     ]
@@ -33615,7 +33570,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -33673,21 +33628,6 @@
                         "name": "change_order",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "materials",
-                                "materials.inventory",
-                                "projectStage",
-                                "scopeOfWork",
-                                "estimator",
-                                "invoices"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -33766,7 +33706,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -33834,7 +33774,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -33894,7 +33834,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -33967,21 +33907,6 @@
                         "name": "project",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "materials",
-                                "materials.inventory",
-                                "projectStage",
-                                "scopeOfWork",
-                                "estimator",
-                                "invoices"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -34065,7 +33990,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -34149,7 +34074,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -34233,7 +34158,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -34304,7 +34229,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -35146,16 +35071,6 @@
                         "name": "project_stage",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -35388,18 +35303,7 @@
                 "operationId": "post-api-contractors-project-stages-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -36055,16 +35959,6 @@
                         "name": "stage",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -36329,16 +36223,6 @@
                         "name": "project",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopesOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -38297,20 +38181,6 @@
                         "name": "project_bidding",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "company",
-                                "contacts",
-                                "proposals",
-                                "filledProposals",
-                                "projects"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -38555,22 +38425,7 @@
                 "operationId": "post-api-contractors-project-biddings-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "company",
-                                "contacts",
-                                "proposals",
-                                "filledProposals",
-                                "projects"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -42983,20 +42838,6 @@
                         "name": "project_proposal",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "projectBidding",
-                                "scopesOfWork",
-                                "materials",
-                                "project",
-                                "fields"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -43241,22 +43082,7 @@
                 "operationId": "post-api-contractors-project-proposals-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "projectBidding",
-                                "scopesOfWork",
-                                "materials",
-                                "project",
-                                "fields"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -43775,16 +43601,6 @@
                         "name": "scopes_of_work",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -44049,16 +43865,6 @@
                         "name": "project_proposal",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -44787,8 +44593,7 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage",
-                                "changeOrder"
+                                "projectStage"
                             ]
                         },
                         "name": "include",
@@ -44857,8 +44662,7 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage",
-                                "changeOrder"
+                                "projectStage"
                             ]
                         },
                         "name": "include",
@@ -44926,8 +44730,7 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage",
-                                "changeOrder"
+                                "projectStage"
                             ]
                         },
                         "name": "include",
@@ -44982,14 +44785,16 @@
                                                     "enum": [
                                                         "project_id",
                                                         "project_stage_id",
-                                                        "change_order_id",
                                                         "type",
+                                                        "final_invoice_id",
                                                         "invoice_no",
                                                         "date",
                                                         "due_date",
                                                         "description",
                                                         "amount",
                                                         "amount_currency",
+                                                        "order_amount",
+                                                        "order_amount_currency",
                                                         "paid_amount",
                                                         "paid_amount_currency",
                                                         "document_paid_amount",
@@ -45037,14 +44842,16 @@
                                                                 "enum": [
                                                                     "project_id",
                                                                     "project_stage_id",
-                                                                    "change_order_id",
                                                                     "type",
+                                                                    "final_invoice_id",
                                                                     "invoice_no",
                                                                     "date",
                                                                     "due_date",
                                                                     "description",
                                                                     "amount",
                                                                     "amount_currency",
+                                                                    "order_amount",
+                                                                    "order_amount_currency",
                                                                     "paid_amount",
                                                                     "paid_amount_currency",
                                                                     "document_paid_amount",
@@ -45155,8 +44962,7 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage",
-                                "changeOrder"
+                                "projectStage"
                             ]
                         },
                         "name": "include",
@@ -45204,18 +45010,6 @@
                         "name": "invoice",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "project",
-                                "projectStage",
-                                "changeOrder"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -45284,8 +45078,7 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage",
-                                "changeOrder"
+                                "projectStage"
                             ]
                         },
                         "name": "include",
@@ -45341,8 +45134,7 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage",
-                                "changeOrder"
+                                "projectStage"
                             ]
                         },
                         "name": "include",
@@ -45390,8 +45182,7 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage",
-                                "changeOrder"
+                                "projectStage"
                             ]
                         },
                         "name": "include",
@@ -45454,20 +45245,7 @@
                 "operationId": "post-api-contractors-invoices-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "project",
-                                "projectStage",
-                                "changeOrder"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -45539,8 +45317,7 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage",
-                                "changeOrder"
+                                "projectStage"
                             ]
                         },
                         "name": "include",
@@ -45612,8 +45389,7 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage",
-                                "changeOrder"
+                                "projectStage"
                             ]
                         },
                         "name": "include",
@@ -45982,16 +45758,6 @@
                         "name": "scopes_progress",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -46256,16 +46022,6 @@
                         "name": "invoice",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "scopeOfWork"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -46996,7 +46752,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47069,7 +46825,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47141,7 +46897,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47205,7 +46961,6 @@
                                                         "project_id",
                                                         "project_stage_id",
                                                         "estimator_id",
-                                                        "scope_of_work_id",
                                                         "status",
                                                         "date",
                                                         "approved_date",
@@ -47256,7 +47011,6 @@
                                                                     "project_id",
                                                                     "project_stage_id",
                                                                     "estimator_id",
-                                                                    "scope_of_work_id",
                                                                     "status",
                                                                     "date",
                                                                     "approved_date",
@@ -47302,7 +47056,7 @@
                                                         "materials",
                                                         "materials.inventory",
                                                         "projectStage",
-                                                        "scopeOfWork",
+                                                        "scopesOfWork",
                                                         "estimator",
                                                         "invoices"
                                                     ]
@@ -47386,7 +47140,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47436,21 +47190,6 @@
                         "name": "change_order",
                         "in": "path",
                         "required": true
-                    },
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "materials",
-                                "materials.inventory",
-                                "projectStage",
-                                "scopeOfWork",
-                                "estimator",
-                                "invoices"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -47521,7 +47260,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47581,7 +47320,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47633,7 +47372,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47698,23 +47437,7 @@
                 "operationId": "post-api-contractors-change-orders-batch"
             },
             "patch": {
-                "parameters": [
-                    {
-                        "schema": {
-                            "type": "string",
-                            "enum": [
-                                "materials",
-                                "materials.inventory",
-                                "projectStage",
-                                "scopeOfWork",
-                                "estimator",
-                                "invoices"
-                            ]
-                        },
-                        "name": "include",
-                        "in": "query"
-                    }
-                ],
+                "parameters": [],
                 "requestBody": {
                     "content": {
                         "application\/json": {
@@ -47788,7 +47511,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -47864,7 +47587,7 @@
                                 "materials",
                                 "materials.inventory",
                                 "projectStage",
-                                "scopeOfWork",
+                                "scopesOfWork",
                                 "estimator",
                                 "invoices"
                             ]
@@ -50382,8 +50105,29 @@
                             "all"
                         ]
                     },
-                    "payload": {},
-                    "columns_changed": {},
+                    "payload": {
+                        "type": "array",
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "type": "array"
+                                },
+                                {
+                                    "type": "string"
+                                }
+                            ]
+                        },
+                        "nullable": true,
+                        "default": null
+                    },
+                    "columns_changed": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "nullable": true,
+                        "default": null
+                    },
                     "description": {
                         "type": "string",
                         "nullable": true
@@ -51690,6 +51434,16 @@
                         "type": "string",
                         "format": "date"
                     },
+                    "sell_price": {},
+                    "sell_price_currency": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "sell_date": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date"
+                    },
                     "vendor_id": {
                         "type": "integer",
                         "nullable": true
@@ -52492,6 +52246,15 @@
                                 "nullable": true,
                                 "format": "date"
                             },
+                            "billed_in_full": {
+                                "type": "integer",
+                                "nullable": true
+                            },
+                            "billed_in_full_date": {
+                                "type": "string",
+                                "nullable": true,
+                                "format": "date"
+                            },
                             "created_at": {
                                 "type": "string",
                                 "nullable": true,
@@ -52840,7 +52603,7 @@
                         "type": "integer",
                         "nullable": true
                     },
-                    "change_order_id": {
+                    "final_invoice_id": {
                         "type": "integer",
                         "nullable": true
                     },
@@ -52888,6 +52651,11 @@
                     "amount_currency": {
                         "type": "string"
                     },
+                    "order_amount": {},
+                    "order_amount_currency": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "paid_amount": {},
                     "document_paid_amount": {},
                     "document_paid_amount_currency": {
@@ -52898,6 +52666,11 @@
                     },
                     "paid_in_full": {
                         "type": "integer"
+                    },
+                    "paid_in_full_date": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date"
                     },
                     "update_progress": {
                         "type": "integer"
@@ -52931,7 +52704,17 @@
             "InvoiceScopeProgress": {
                 "title": "InvoiceScopeProgress",
                 "type": "object",
-                "properties": []
+                "properties": {
+                    "invoice_id": {
+                        "type": "integer"
+                    },
+                    "scope_of_work_id": {
+                        "type": "integer"
+                    },
+                    "scope_progress": {
+                        "type": "integer"
+                    }
+                }
             },
             "InvoiceScopeProgressResource": {
                 "title": "InvoiceScopeProgressResource",
@@ -52941,7 +52724,11 @@
                     },
                     {
                         "type": "object",
-                        "properties": []
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            }
+                        }
                     }
                 ]
             },
