@@ -44593,7 +44593,8 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage"
+                                "projectStage",
+                                "finalInvoice"
                             ]
                         },
                         "name": "include",
@@ -44662,7 +44663,8 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage"
+                                "projectStage",
+                                "finalInvoice"
                             ]
                         },
                         "name": "include",
@@ -44730,7 +44732,8 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage"
+                                "projectStage",
+                                "finalInvoice"
                             ]
                         },
                         "name": "include",
@@ -44962,7 +44965,8 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage"
+                                "projectStage",
+                                "finalInvoice"
                             ]
                         },
                         "name": "include",
@@ -45078,7 +45082,8 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage"
+                                "projectStage",
+                                "finalInvoice"
                             ]
                         },
                         "name": "include",
@@ -45134,7 +45139,8 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage"
+                                "projectStage",
+                                "finalInvoice"
                             ]
                         },
                         "name": "include",
@@ -45182,7 +45188,8 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage"
+                                "projectStage",
+                                "finalInvoice"
                             ]
                         },
                         "name": "include",
@@ -45317,7 +45324,8 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage"
+                                "projectStage",
+                                "finalInvoice"
                             ]
                         },
                         "name": "include",
@@ -45389,7 +45397,8 @@
                             "type": "string",
                             "enum": [
                                 "project",
-                                "projectStage"
+                                "projectStage",
+                                "finalInvoice"
                             ]
                         },
                         "name": "include",
@@ -52608,7 +52617,8 @@
                     "type": {
                         "enum": [
                             "partial",
-                            "prepayment"
+                            "prepayment",
+                            "final"
                         ]
                     },
                     "invoice_no": {
