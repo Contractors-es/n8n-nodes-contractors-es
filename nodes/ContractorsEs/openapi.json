@@ -52610,10 +52610,6 @@
                         "type": "integer",
                         "nullable": true
                     },
-                    "final_invoice_id": {
-                        "type": "integer",
-                        "nullable": true
-                    },
                     "type": {
                         "enum": [
                             "partial",
