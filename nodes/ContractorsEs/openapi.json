@@ -52689,6 +52689,13 @@
                     "external_id": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "prepayment_ids": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "Array of prepayment invoice IDs associated with this final invoice. Required when type is final, prohibited otherwise."
                     }
                 }
             },
