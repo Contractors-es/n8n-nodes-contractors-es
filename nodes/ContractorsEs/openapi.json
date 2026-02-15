@@ -51810,7 +51810,6 @@
                             }
                         }
                     },
-                    "tax_rounding_method": {},
                     "status": {
                         "enum": [
                             "awarded",
