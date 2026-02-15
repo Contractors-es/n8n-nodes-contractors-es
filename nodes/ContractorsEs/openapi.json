@@ -52477,7 +52477,6 @@
                             }
                         }
                     },
-                    "tax_rounding_method": {},
                     "awarded": {
                         "type": "integer"
                     },
@@ -52645,7 +52644,6 @@
                             }
                         }
                     },
-                    "tax_rounding_method": {},
                     "amount": {},
                     "amount_currency": {
                         "type": "string"
