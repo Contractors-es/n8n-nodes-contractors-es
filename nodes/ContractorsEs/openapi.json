@@ -67867,12 +67867,6 @@
                     "sticky": {
                         "type": "integer"
                     },
-                    "record_id": {
-                        "type": "integer"
-                    },
-                    "record_type": {
-                        "type": "string"
-                    },
                     "category_id": {
                         "type": "integer",
                         "nullable": true
