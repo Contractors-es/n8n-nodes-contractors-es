@@ -45174,6 +45174,7 @@
                                                     "enum": [
                                                         "disapproved",
                                                         "approved",
+                                                        "completed",
                                                         "sent",
                                                         "favoritesProjects",
                                                         "mine"
@@ -62731,6 +62732,7 @@
                                                     "enum": [
                                                         "disapproved",
                                                         "approved",
+                                                        "completed",
                                                         "sent",
                                                         "favoritesProjects",
                                                         "mine"
@@ -69770,7 +69772,16 @@
                         "type": "string",
                         "format": "date"
                     },
-                    "status": {},
+                    "status": {
+                        "enum": [
+                            "draft",
+                            "verified",
+                            "sent",
+                            "disapproved",
+                            "approved",
+                            "completed"
+                        ]
+                    },
                     "approved_date": {
                         "type": "string",
                         "nullable": true,
