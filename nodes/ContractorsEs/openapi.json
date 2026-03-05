@@ -62531,8 +62531,7 @@
                                 "materials.inventory",
                                 "projectStage",
                                 "scopesOfWork",
-                                "estimator",
-                                "invoices"
+                                "estimator"
                             ]
                         },
                         "name": "include",
@@ -62604,8 +62603,7 @@
                                 "materials.inventory",
                                 "projectStage",
                                 "scopesOfWork",
-                                "estimator",
-                                "invoices"
+                                "estimator"
                             ]
                         },
                         "name": "include",
@@ -62692,8 +62690,7 @@
                                 "materials.inventory",
                                 "projectStage",
                                 "scopesOfWork",
-                                "estimator",
-                                "invoices"
+                                "estimator"
                             ]
                         },
                         "name": "include",
@@ -62868,8 +62865,7 @@
                                                         "materials.inventory",
                                                         "projectStage",
                                                         "scopesOfWork",
-                                                        "estimator",
-                                                        "invoices"
+                                                        "estimator"
                                                     ]
                                                 }
                                             }
@@ -62952,8 +62948,7 @@
                                 "materials.inventory",
                                 "projectStage",
                                 "scopesOfWork",
-                                "estimator",
-                                "invoices"
+                                "estimator"
                             ]
                         },
                         "name": "include",
@@ -63072,8 +63067,7 @@
                                 "materials.inventory",
                                 "projectStage",
                                 "scopesOfWork",
-                                "estimator",
-                                "invoices"
+                                "estimator"
                             ]
                         },
                         "name": "include",
@@ -63132,8 +63126,7 @@
                                 "materials.inventory",
                                 "projectStage",
                                 "scopesOfWork",
-                                "estimator",
-                                "invoices"
+                                "estimator"
                             ]
                         },
                         "name": "include",
@@ -63184,8 +63177,7 @@
                                 "materials.inventory",
                                 "projectStage",
                                 "scopesOfWork",
-                                "estimator",
-                                "invoices"
+                                "estimator"
                             ]
                         },
                         "name": "include",
@@ -63323,8 +63315,7 @@
                                 "materials.inventory",
                                 "projectStage",
                                 "scopesOfWork",
-                                "estimator",
-                                "invoices"
+                                "estimator"
                             ]
                         },
                         "name": "include",
@@ -63399,8 +63390,7 @@
                                 "materials.inventory",
                                 "projectStage",
                                 "scopesOfWork",
-                                "estimator",
-                                "invoices"
+                                "estimator"
                             ]
                         },
                         "name": "include",
@@ -69807,6 +69797,7 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "tax_rates": {},
                     "contract_days_added": {
                         "type": "integer"
                     },
@@ -69851,8 +69842,11 @@
                             "pending",
                             "completed",
                             "protocol_sent",
+                            "accepted_conditionally",
+                            "completed_fixes",
+                            "protocol_sent_after_fixes",
                             "accepted",
-                            "invoiced"
+                            "declined"
                         ]
                     },
                     "prepayment_percentage": {},
