@@ -35998,7 +35998,14 @@
                             "type": "string",
                             "enum": [
                                 "company",
-                                "contacts"
+                                "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
+                                "projectBidding",
+                                "projectProposal",
+                                "scopesOfWork",
+                                "materials"
                             ]
                         },
                         "name": "include",
@@ -36067,7 +36074,14 @@
                             "type": "string",
                             "enum": [
                                 "company",
-                                "contacts"
+                                "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
+                                "projectBidding",
+                                "projectProposal",
+                                "scopesOfWork",
+                                "materials"
                             ]
                         },
                         "name": "include",
@@ -36151,7 +36165,14 @@
                             "type": "string",
                             "enum": [
                                 "company",
-                                "contacts"
+                                "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
+                                "projectBidding",
+                                "projectProposal",
+                                "scopesOfWork",
+                                "materials"
                             ]
                         },
                         "name": "include",
@@ -36310,6 +36331,23 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "includes": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "relation": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "projectBidding",
+                                                        "projectProposal",
+                                                        "scopesOfWork",
+                                                        "materials"
+                                                    ]
+                                                }
+                                            }
+                                        }
                                     }
                                 }
                             }
@@ -36385,7 +36423,14 @@
                             "type": "string",
                             "enum": [
                                 "company",
-                                "contacts"
+                                "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
+                                "projectBidding",
+                                "projectProposal",
+                                "scopesOfWork",
+                                "materials"
                             ]
                         },
                         "name": "include",
@@ -36501,7 +36546,14 @@
                             "type": "string",
                             "enum": [
                                 "company",
-                                "contacts"
+                                "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
+                                "projectBidding",
+                                "projectProposal",
+                                "scopesOfWork",
+                                "materials"
                             ]
                         },
                         "name": "include",
@@ -36557,7 +36609,14 @@
                             "type": "string",
                             "enum": [
                                 "company",
-                                "contacts"
+                                "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
+                                "projectBidding",
+                                "projectProposal",
+                                "scopesOfWork",
+                                "materials"
                             ]
                         },
                         "name": "include",
@@ -36605,7 +36664,14 @@
                             "type": "string",
                             "enum": [
                                 "company",
-                                "contacts"
+                                "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
+                                "projectBidding",
+                                "projectProposal",
+                                "scopesOfWork",
+                                "materials"
                             ]
                         },
                         "name": "include",
@@ -36740,7 +36806,14 @@
                             "type": "string",
                             "enum": [
                                 "company",
-                                "contacts"
+                                "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
+                                "projectBidding",
+                                "projectProposal",
+                                "scopesOfWork",
+                                "materials"
                             ]
                         },
                         "name": "include",
@@ -36812,7 +36885,14 @@
                             "type": "string",
                             "enum": [
                                 "company",
-                                "contacts"
+                                "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
+                                "projectBidding",
+                                "projectProposal",
+                                "scopesOfWork",
+                                "materials"
                             ]
                         },
                         "name": "include",
@@ -50591,6 +50671,9 @@
                             "enum": [
                                 "company",
                                 "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
                                 "proposals",
                                 "filledProposals",
                                 "projects"
@@ -50663,6 +50746,9 @@
                             "enum": [
                                 "company",
                                 "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
                                 "proposals",
                                 "filledProposals",
                                 "projects"
@@ -50750,6 +50836,9 @@
                             "enum": [
                                 "company",
                                 "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
                                 "proposals",
                                 "filledProposals",
                                 "projects"
@@ -50996,6 +51085,9 @@
                             "enum": [
                                 "company",
                                 "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
                                 "proposals",
                                 "filledProposals",
                                 "projects"
@@ -51115,6 +51207,9 @@
                             "enum": [
                                 "company",
                                 "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
                                 "proposals",
                                 "filledProposals",
                                 "projects"
@@ -51174,6 +51269,9 @@
                             "enum": [
                                 "company",
                                 "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
                                 "proposals",
                                 "filledProposals",
                                 "projects"
@@ -51225,6 +51323,9 @@
                             "enum": [
                                 "company",
                                 "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
                                 "proposals",
                                 "filledProposals",
                                 "projects"
@@ -51363,6 +51464,9 @@
                             "enum": [
                                 "company",
                                 "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
                                 "proposals",
                                 "filledProposals",
                                 "projects"
@@ -51438,6 +51542,9 @@
                             "enum": [
                                 "company",
                                 "contacts",
+                                "jobType",
+                                "referrer",
+                                "fields",
                                 "proposals",
                                 "filledProposals",
                                 "projects"
@@ -53398,6 +53505,18 @@
                         "name": "project_bidding",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -53463,6 +53582,18 @@
                             "type": "boolean"
                         },
                         "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
                         "in": "query"
                     },
                     {
@@ -53544,6 +53675,18 @@
                             "type": "boolean"
                         },
                         "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
                         "in": "query"
                     },
                     {
@@ -53633,6 +53776,18 @@
                             "type": "boolean"
                         },
                         "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
                         "in": "query"
                     }
                 ],
@@ -53755,6 +53910,18 @@
                         },
                         "name": "force",
                         "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -53808,6 +53975,18 @@
                         "name": "proposal",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -53853,6 +54032,18 @@
                         "name": "project_bidding",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -53994,6 +54185,18 @@
                         },
                         "name": "force",
                         "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -54063,6 +54266,18 @@
                         "name": "project_bidding",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "requestBody": {
@@ -54132,6 +54347,18 @@
                         "name": "project_bidding",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "responses": {
@@ -54188,6 +54415,18 @@
                         "name": "proposal",
                         "in": "path",
                         "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "fields",
+                                "materials",
+                                "scopesOfWork"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
                     }
                 ],
                 "responses": {
