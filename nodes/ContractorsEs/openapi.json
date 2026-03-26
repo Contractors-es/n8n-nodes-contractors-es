@@ -68101,7 +68101,7 @@
                     "files": {
                         "type": "array",
                         "nullable": true,
-                        "description": "Array of note attachments. Each item can be an form-data upload file or a base64 payload string. Supported base64 formats: raw payload, data:<mime>;base64,<payload>, data:<mime>;name=<filename>;base64,<payload>, and name=<filename>;base64,<payload>.",
+                        "description": "Array of note attachments. Each item can be an form-data upload file or a base64 payload string. Supported base64 formats: raw payload, data:mime;base64,payload, data:mime;name=filename;base64,payload, and name=filename;base64,payload.",
                         "items": {
                             "type": "string"
                         }
