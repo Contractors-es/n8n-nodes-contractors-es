@@ -46798,7 +46798,9 @@
                                                         "status",
                                                         "project_id",
                                                         "stage_number",
-                                                        "group"
+                                                        "group",
+                                                        "estimated_start_date",
+                                                        "estimated_end_date"
                                                     ]
                                                 },
                                                 "operator": {
@@ -46840,7 +46842,9 @@
                                                                     "status",
                                                                     "project_id",
                                                                     "stage_number",
-                                                                    "group"
+                                                                    "group",
+                                                                    "estimated_start_date",
+                                                                    "estimated_end_date"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -46894,6 +46898,9 @@
                                                         "name",
                                                         "status",
                                                         "stage_progress",
+                                                        "estimated_start_date",
+                                                        "estimated_end_date",
+                                                        "estimated_duration_days",
                                                         "stage_amount",
                                                         "final_amount",
                                                         "created_at",
@@ -48554,7 +48561,9 @@
                                                         "status",
                                                         "stage_number",
                                                         "project_id",
-                                                        "group"
+                                                        "group",
+                                                        "estimated_start_date",
+                                                        "estimated_end_date"
                                                     ]
                                                 },
                                                 "operator": {
@@ -48596,7 +48605,9 @@
                                                                     "status",
                                                                     "stage_number",
                                                                     "project_id",
-                                                                    "group"
+                                                                    "group",
+                                                                    "estimated_start_date",
+                                                                    "estimated_end_date"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -48650,6 +48661,9 @@
                                                         "name",
                                                         "status",
                                                         "stage_progress",
+                                                        "estimated_start_date",
+                                                        "estimated_end_date",
+                                                        "estimated_duration_days",
                                                         "stage_amount",
                                                         "final_amount",
                                                         "created_at",
@@ -68084,7 +68098,14 @@
                         "type": "string"
                     },
                     "note": {},
-                    "files": {},
+                    "files": {
+                        "type": "array",
+                        "nullable": true,
+                        "description": "Array of note attachments. Each item can be an form-data upload file or a base64 payload string. Supported base64 formats: raw payload, data:<mime>;base64,<payload>, data:<mime>;name=<filename>;base64,<payload>, and name=<filename>;base64,<payload>.",
+                        "items": {
+                            "type": "string"
+                        }
+                    },
                     "permission": {
                         "type": "integer",
                         "enum": [
@@ -70074,6 +70095,20 @@
                     },
                     "name": {
                         "type": "string"
+                    },
+                    "estimated_start_date": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date"
+                    },
+                    "estimated_end_date": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date"
+                    },
+                    "estimated_duration_days": {
+                        "type": "integer",
+                        "nullable": true
                     },
                     "status": {
                         "enum": [
