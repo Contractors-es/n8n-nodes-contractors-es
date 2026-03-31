@@ -1370,7 +1370,8 @@
                                                         "groups.slug",
                                                         "groups.name",
                                                         "salesRepresentatives.id",
-                                                        "external_id"
+                                                        "external_id",
+                                                        "tax_id"
                                                     ]
                                                 },
                                                 "operator": {
@@ -1418,7 +1419,8 @@
                                                                     "groups.slug",
                                                                     "groups.name",
                                                                     "salesRepresentatives.id",
-                                                                    "external_id"
+                                                                    "external_id",
+                                                                    "tax_id"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -35583,6 +35585,2167 @@
                 "operationId": "get-api-contractors-scope-of-works-scope-of-work"
             }
         },
+        "\/api\/contractors\/job-visits\/webhooks": {
+            "post": {
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/Webhook"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/WebhookResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Create webhook",
+                "tags": [
+                    "Job Visit Webhook Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-webhooks"
+            },
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 20
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/WebhookResource"
+                                            }
+                                        },
+                                        "links": {
+                                            "$ref": "#\/components\/schemas\/ResourceLinks"
+                                        },
+                                        "meta": {
+                                            "$ref": "#\/components\/schemas\/ResourceMeta"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "summary": "Get a list of webhooks",
+                "tags": [
+                    "Job Visit Webhook Api"
+                ],
+                "operationId": "get-api-contractors-job-visits-webhooks"
+            }
+        },
+        "\/api\/contractors\/job-visits\/webhooks\/search": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 20
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "filters": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "and",
+                                                        "or"
+                                                    ]
+                                                },
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "id",
+                                                        "event",
+                                                        "active",
+                                                        "created_by",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "operator": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "<",
+                                                        "<=",
+                                                        ">",
+                                                        ">=",
+                                                        "=",
+                                                        "!=",
+                                                        "like",
+                                                        "not like",
+                                                        "in",
+                                                        "not in",
+                                                        "all in",
+                                                        "any in"
+                                                    ]
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                },
+                                                "nested": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "and",
+                                                                    "or"
+                                                                ]
+                                                            },
+                                                            "field": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "id",
+                                                                    "event",
+                                                                    "active",
+                                                                    "created_by",
+                                                                    "class_name",
+                                                                    "url"
+                                                                ]
+                                                            },
+                                                            "operator": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "<",
+                                                                    "<=",
+                                                                    ">",
+                                                                    ">=",
+                                                                    "=",
+                                                                    "!=",
+                                                                    "like",
+                                                                    "not like",
+                                                                    "in",
+                                                                    "not in",
+                                                                    "all in",
+                                                                    "any in"
+                                                                ]
+                                                            },
+                                                            "value": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/WebhookResource"
+                                            }
+                                        },
+                                        "links": {
+                                            "$ref": "#\/components\/schemas\/ResourceLinks"
+                                        },
+                                        "meta": {
+                                            "$ref": "#\/components\/schemas\/ResourceMeta"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "summary": "Search for webhooks",
+                "tags": [
+                    "Job Visit Webhook Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-webhooks-search"
+            }
+        },
+        "\/api\/contractors\/job-visits\/webhooks\/{webhook}": {
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "webhook",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/WebhookResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Get webhook",
+                "tags": [
+                    "Job Visit Webhook Api"
+                ],
+                "operationId": "get-api-contractors-job-visits-webhooks-webhook"
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "webhook",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/Webhook"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/WebhookResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Update webhook",
+                "tags": [
+                    "Job Visit Webhook Api"
+                ],
+                "operationId": "patch-api-contractors-job-visits-webhooks-webhook"
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "webhook",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/WebhookResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Delete webhook",
+                "tags": [
+                    "Job Visit Webhook Api"
+                ],
+                "operationId": "delete-api-contractors-job-visits-webhooks-webhook"
+            }
+        },
+        "\/api\/contractors\/job-visits": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectBidding",
+                                "visitors",
+                                "visitType"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/JobVisit"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/JobVisitResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Create contr job visit",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "post-api-contractors-job-visits"
+            },
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "with_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectBidding",
+                                "visitors",
+                                "visitType"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 20
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/JobVisitResource"
+                                            }
+                                        },
+                                        "links": {
+                                            "$ref": "#\/components\/schemas\/ResourceLinks"
+                                        },
+                                        "meta": {
+                                            "$ref": "#\/components\/schemas\/ResourceMeta"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "summary": "Get a list of contr job visits",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "get-api-contractors-job-visits"
+            }
+        },
+        "\/api\/contractors\/job-visits\/search": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "with_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectBidding",
+                                "visitors",
+                                "visitType"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 20
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "scopes": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "name": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "projectBiddings",
+                                                        "projects",
+                                                        "favoritesProjects",
+                                                        "favoritesProjectBiddings"
+                                                    ]
+                                                },
+                                                "parameters": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "string"
+                                                    }
+                                                }
+                                            },
+                                            "required": [
+                                                "name"
+                                            ]
+                                        }
+                                    },
+                                    "filters": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "type": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "and",
+                                                        "or"
+                                                    ]
+                                                },
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "project_status",
+                                                        "project_id",
+                                                        "project_bidding_id",
+                                                        "status",
+                                                        "visit_date",
+                                                        "visit_end",
+                                                        "visit_type_id",
+                                                        "reason_for_visit",
+                                                        "visitors.id",
+                                                        "external_id"
+                                                    ]
+                                                },
+                                                "operator": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "<",
+                                                        "<=",
+                                                        ">",
+                                                        ">=",
+                                                        "=",
+                                                        "!=",
+                                                        "like",
+                                                        "not like",
+                                                        "in",
+                                                        "not in",
+                                                        "all in",
+                                                        "any in"
+                                                    ]
+                                                },
+                                                "value": {
+                                                    "type": "string"
+                                                },
+                                                "nested": {
+                                                    "type": "array",
+                                                    "items": {
+                                                        "type": "object",
+                                                        "properties": {
+                                                            "type": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "and",
+                                                                    "or"
+                                                                ]
+                                                            },
+                                                            "field": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "project_status",
+                                                                    "project_id",
+                                                                    "project_bidding_id",
+                                                                    "status",
+                                                                    "visit_date",
+                                                                    "visit_end",
+                                                                    "visit_type_id",
+                                                                    "reason_for_visit",
+                                                                    "visitors.id",
+                                                                    "external_id"
+                                                                ]
+                                                            },
+                                                            "operator": {
+                                                                "type": "string",
+                                                                "enum": [
+                                                                    "<",
+                                                                    "<=",
+                                                                    ">",
+                                                                    ">=",
+                                                                    "=",
+                                                                    "!=",
+                                                                    "like",
+                                                                    "not like",
+                                                                    "in",
+                                                                    "not in",
+                                                                    "all in",
+                                                                    "any in"
+                                                                ]
+                                                            },
+                                                            "value": {
+                                                                "type": "string"
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "includes": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "relation": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "project",
+                                                        "projectBidding",
+                                                        "visitors",
+                                                        "visitType"
+                                                    ]
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/JobVisitResource"
+                                            }
+                                        },
+                                        "links": {
+                                            "$ref": "#\/components\/schemas\/ResourceLinks"
+                                        },
+                                        "meta": {
+                                            "$ref": "#\/components\/schemas\/ResourceMeta"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "summary": "Search for contr job visits",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-search"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}": {
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "with_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectBidding",
+                                "visitors",
+                                "visitType"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/JobVisitResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Get contr job visit",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "get-api-contractors-job-visits-job-visit"
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/JobVisit"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/JobVisitResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Update contr job visit",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "patch-api-contractors-job-visits-job-visit"
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "force",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectBidding",
+                                "visitors",
+                                "visitType"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/JobVisitResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Delete contr job visit",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "delete-api-contractors-job-visits-job-visit"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}\/restore": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectBidding",
+                                "visitors",
+                                "visitType"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/JobVisitResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Restore contr job visit",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-job-visit-restore"
+            }
+        },
+        "\/api\/contractors\/job-visits\/batch": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectBidding",
+                                "visitors",
+                                "visitType"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#\/components\/schemas\/JobVisit"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/JobVisitResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Create a batch of contr job visits",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-batch"
+            },
+            "patch": {
+                "parameters": [],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "object",
+                                        "properties": {
+                                            "{key}": {
+                                                "$ref": "#\/components\/schemas\/JobVisit"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/JobVisitResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Update a batch of contr job visits",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "patch-api-contractors-job-visits-batch"
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "force",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectBidding",
+                                "visitors",
+                                "visitType"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer",
+                                            "description": "A list of resource IDs"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/JobVisitResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Delete a batch of contr job visits",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "delete-api-contractors-job-visits-batch"
+            }
+        },
+        "\/api\/contractors\/job-visits\/batch\/restore": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "project",
+                                "projectBidding",
+                                "visitors",
+                                "visitType"
+                            ]
+                        },
+                        "name": "include",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer",
+                                            "description": "A list of resource IDs"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/JobVisitResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Restore a batch of contr job visits",
+                "tags": [
+                    "Job Visit Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-batch-restore"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}\/notes": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/Note"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/NoteResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Create note",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-job-visit-notes"
+            },
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "with_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 20
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/NoteResource"
+                                            }
+                                        },
+                                        "links": {
+                                            "$ref": "#\/components\/schemas\/ResourceLinks"
+                                        },
+                                        "meta": {
+                                            "$ref": "#\/components\/schemas\/ResourceMeta"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "summary": "Get a list of notes",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "get-api-contractors-job-visits-job-visit-notes"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}\/notes\/search": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "with_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 20
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/NoteResource"
+                                            }
+                                        },
+                                        "links": {
+                                            "$ref": "#\/components\/schemas\/ResourceLinks"
+                                        },
+                                        "meta": {
+                                            "$ref": "#\/components\/schemas\/ResourceMeta"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "summary": "Search for notes",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-job-visit-notes-search"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}\/notes\/{note}": {
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "note",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "with_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "only_trashed",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/NoteResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Get note",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "get-api-contractors-job-visits-job-visit-notes-note"
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "note",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/Note"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/NoteResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Update note",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "patch-api-contractors-job-visits-job-visit-notes-note"
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "note",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "force",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/NoteResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Delete note",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "delete-api-contractors-job-visits-job-visit-notes-note"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}\/notes\/{note}\/restore": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "note",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/NoteResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Restore note",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-job-visit-notes-note-restore"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}\/notes\/batch": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#\/components\/schemas\/Note"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/NoteResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Create a batch of notes",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-job-visit-notes-batch"
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "object",
+                                        "properties": {
+                                            "{key}": {
+                                                "$ref": "#\/components\/schemas\/Note"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/NoteResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Update a batch of notes",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "patch-api-contractors-job-visits-job-visit-notes-batch"
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "force",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer",
+                                            "description": "A list of resource IDs"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/NoteResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Delete a batch of notes",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "delete-api-contractors-job-visits-job-visit-notes-batch"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}\/notes\/batch\/restore": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer",
+                                            "description": "A list of resource IDs"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/NoteResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Restore a batch of notes",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-job-visit-notes-batch-restore"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}\/notes\/associate": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/NoteResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Associate note with contr job visit",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "post-api-contractors-job-visits-job-visit-notes-associate"
+            }
+        },
+        "\/api\/contractors\/job-visits\/{job_visit}\/notes\/{note}\/dissociate": {
+            "delete": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "job_visit",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "note",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/NoteResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Dissociate note from contr job visit",
+                "tags": [
+                    "Job Visit Notes Relation Api"
+                ],
+                "operationId": "delete-api-contractors-job-visits-job-visit-notes-note-dissociate"
+            }
+        },
         "\/api\/contractors\/projects\/webhooks": {
             "post": {
                 "parameters": [],
@@ -69613,6 +71776,58 @@
                     }
                 ]
             },
+            "JobVisit": {
+                "title": "JobVisit",
+                "type": "object",
+                "properties": {
+                    "project_status": {},
+                    "project_bidding_id": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "project_id": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "status": {
+                        "type": "integer"
+                    },
+                    "visit_date": {
+                        "type": "string"
+                    },
+                    "visit_end": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "visit_type_id": {
+                        "type": "integer"
+                    },
+                    "reason_for_visit": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "external_id": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "JobVisitResource": {
+                "title": "JobVisitResource",
+                "allOf": [
+                    {
+                        "$ref": "#\/components\/schemas\/JobVisit"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                ]
+            },
             "Project": {
                 "title": "Project",
                 "type": "object",
@@ -71052,6 +73267,18 @@
         {
             "name": "Scope Of Work Api",
             "description": "API documentation for Scope Of Work Api"
+        },
+        {
+            "name": "Job Visit Webhook Api",
+            "description": "API documentation for Job Visit Webhook Api"
+        },
+        {
+            "name": "Job Visit Api",
+            "description": "API documentation for Job Visit Api"
+        },
+        {
+            "name": "Job Visit Notes Relation Api",
+            "description": "API documentation for Job Visit Notes Relation Api"
         },
         {
             "name": "Project Webhook Api",
