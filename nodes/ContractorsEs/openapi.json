@@ -337,6 +337,31 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "code",
+                                                        "name"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -610,6 +635,31 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "code",
+                                                        "name"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -975,6 +1025,33 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -1447,6 +1524,36 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "company_name",
+                                                        "short_name",
+                                                        "phone",
+                                                        "fax",
+                                                        "email",
+                                                        "city",
+                                                        "tax_id"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -3024,6 +3131,31 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "name",
+                                                        "slug"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -5245,6 +5377,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -5721,6 +5880,33 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "first_name",
+                                                        "last_name",
+                                                        "title",
+                                                        "email"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -7298,6 +7484,31 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "name",
+                                                        "slug"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -9519,6 +9730,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -10004,6 +10242,38 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "scheduled_date",
+                                                        "start",
+                                                        "end",
+                                                        "title",
+                                                        "priority",
+                                                        "schedule_type",
+                                                        "permission",
+                                                        "recurring",
+                                                        "recurring_end"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -12626,6 +12896,31 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "name",
+                                                        "active"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -13343,6 +13638,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -13818,6 +14140,36 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "due_date",
+                                                        "due_at",
+                                                        "title",
+                                                        "status",
+                                                        "priority",
+                                                        "due_type",
+                                                        "permission"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -16420,6 +16772,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -16901,6 +17280,37 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "scheduled_date",
+                                                        "scheduled_at",
+                                                        "subject",
+                                                        "status",
+                                                        "priority",
+                                                        "schedule_type",
+                                                        "project_status",
+                                                        "contact_company_switch"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -19000,6 +19410,30 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "name"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -19761,6 +20195,31 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "name",
+                                                        "barcode"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -21368,6 +21827,31 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "type",
+                                                        "quantity"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -22309,6 +22793,32 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "created_at",
+                                                        "quantity",
+                                                        "record_type"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -23217,6 +23727,30 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "name"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -23973,6 +24507,35 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "invoice_no",
+                                                        "delivery_note",
+                                                        "date",
+                                                        "status",
+                                                        "storage_type",
+                                                        "assign"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -26496,6 +27059,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "created_at",
+                                                        "status",
+                                                        "from_storage_type",
+                                                        "to_storage_type"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -28104,6 +28694,31 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "created_at",
+                                                        "quantity"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -29021,6 +29636,33 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "created_at",
+                                                        "status",
+                                                        "memo",
+                                                        "storage_type"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -31558,6 +32200,31 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "name",
+                                                        "asset_id"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -33133,6 +33800,30 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "name"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -33908,6 +34599,34 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "name",
+                                                        "rented",
+                                                        "rented_equipment_no",
+                                                        "assign",
+                                                        "record_type"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -35804,6 +36523,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -36312,6 +37058,34 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "visit_date",
+                                                        "visit_end",
+                                                        "status",
+                                                        "project_status",
+                                                        "reason_for_visit"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     },
                                     "includes": {
@@ -37965,6 +38739,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -38490,6 +39291,36 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "project_name",
+                                                        "bid_no",
+                                                        "acctg_job_no",
+                                                        "status",
+                                                        "tm",
+                                                        "customer_type",
+                                                        "job_progress"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     },
                                     "includes": {
@@ -47532,6 +48363,38 @@
                                             }
                                         }
                                     },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "co_number",
+                                                        "gc_co_number",
+                                                        "title",
+                                                        "type",
+                                                        "status",
+                                                        "date",
+                                                        "approved_date",
+                                                        "billed",
+                                                        "billed_date"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
+                                    },
                                     "includes": {
                                         "type": "array",
                                         "items": {
@@ -48557,6 +49420,33 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -52642,6 +53532,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -53157,6 +54074,33 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "project_name",
+                                                        "bid_no",
+                                                        "status",
+                                                        "customer_type"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     },
                                     "includes": {
@@ -58519,6 +59463,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -59020,6 +59991,33 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "description",
+                                                        "submitted",
+                                                        "awarded",
+                                                        "proposal_amount"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     },
                                     "includes": {
@@ -61628,6 +62626,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -62152,6 +63177,36 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "date",
+                                                        "invoice_no",
+                                                        "due_date",
+                                                        "type",
+                                                        "amount",
+                                                        "paid_in_full",
+                                                        "job_progress"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
@@ -64730,6 +65785,33 @@
                                                 }
                                             }
                                         }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "event",
+                                                        "active",
+                                                        "class_name",
+                                                        "url"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
+                                        }
                                     }
                                 }
                             }
@@ -65249,6 +66331,38 @@
                                                     }
                                                 }
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "co_number",
+                                                        "gc_co_number",
+                                                        "title",
+                                                        "type",
+                                                        "status",
+                                                        "date",
+                                                        "approved_date",
+                                                        "billed",
+                                                        "billed_date"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     },
                                     "includes": {
@@ -67813,6 +68927,33 @@
                                                 "type": "boolean",
                                                 "description": "(default: true) Set it to false to perform search in case-insensitive way"
                                             }
+                                        }
+                                    },
+                                    "sort": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "object",
+                                            "properties": {
+                                                "field": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "subject",
+                                                        "tm",
+                                                        "paid_in_full",
+                                                        "completed"
+                                                    ]
+                                                },
+                                                "direction": {
+                                                    "type": "string",
+                                                    "enum": [
+                                                        "asc",
+                                                        "desc"
+                                                    ]
+                                                }
+                                            },
+                                            "required": [
+                                                "field"
+                                            ]
                                         }
                                     }
                                 }
