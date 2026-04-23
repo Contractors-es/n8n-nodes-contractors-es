@@ -39219,7 +39219,9 @@
                                                         "status",
                                                         "tm",
                                                         "customer_type",
-                                                        "job_progress"
+                                                        "job_progress",
+                                                        "contract_amount",
+                                                        "contract_amount_currency"
                                                     ]
                                                 },
                                                 "operator": {
@@ -39264,7 +39266,9 @@
                                                                     "status",
                                                                     "tm",
                                                                     "customer_type",
-                                                                    "job_progress"
+                                                                    "job_progress",
+                                                                    "contract_amount",
+                                                                    "contract_amount_currency"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -39307,7 +39311,11 @@
                                                         "status",
                                                         "tm",
                                                         "customer_type",
-                                                        "job_progress"
+                                                        "job_progress",
+                                                        "contract_amount",
+                                                        "contract_amount_currency",
+                                                        "created_at",
+                                                        "updated_at"
                                                     ]
                                                 },
                                                 "direction": {
@@ -48020,8 +48028,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -48101,8 +48109,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -48197,8 +48205,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -48277,13 +48285,12 @@
                                                         "title",
                                                         "type",
                                                         "project_id",
-                                                        "project_stage_id",
                                                         "estimator_id",
                                                         "status",
                                                         "date",
                                                         "approved_date",
-                                                        "billed",
-                                                        "billed_date",
+                                                        "billed_in_full",
+                                                        "billed_in_full_date",
                                                         "external_id"
                                                     ]
                                                 },
@@ -48327,13 +48334,12 @@
                                                                     "title",
                                                                     "type",
                                                                     "project_id",
-                                                                    "project_stage_id",
                                                                     "estimator_id",
                                                                     "status",
                                                                     "date",
                                                                     "approved_date",
-                                                                    "billed",
-                                                                    "billed_date",
+                                                                    "billed_in_full",
+                                                                    "billed_in_full_date",
                                                                     "external_id"
                                                                 ]
                                                             },
@@ -48378,8 +48384,8 @@
                                                         "status",
                                                         "date",
                                                         "approved_date",
-                                                        "billed",
-                                                        "billed_date"
+                                                        "billed_in_full",
+                                                        "billed_in_full_date"
                                                     ]
                                                 },
                                                 "direction": {
@@ -48405,8 +48411,8 @@
                                                     "enum": [
                                                         "materials",
                                                         "materials.inventory",
-                                                        "projectStage",
                                                         "scopesOfWork",
+                                                        "scopesOfWork.stage",
                                                         "estimator",
                                                         "invoices"
                                                     ]
@@ -48497,8 +48503,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -48633,8 +48639,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -48701,8 +48707,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -48761,8 +48767,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -48917,8 +48923,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -49001,8 +49007,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -49085,8 +49091,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -49156,8 +49162,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator",
                                 "invoices"
                             ]
@@ -49844,7 +49850,9 @@
                                                         "stage_number",
                                                         "group",
                                                         "estimated_start_date",
-                                                        "estimated_end_date"
+                                                        "estimated_end_date",
+                                                        "stage_amount",
+                                                        "stage_amount_currency"
                                                     ]
                                                 },
                                                 "operator": {
@@ -49888,7 +49896,9 @@
                                                                     "stage_number",
                                                                     "group",
                                                                     "estimated_start_date",
-                                                                    "estimated_end_date"
+                                                                    "estimated_end_date",
+                                                                    "stage_amount",
+                                                                    "stage_amount_currency"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -51607,7 +51617,9 @@
                                                         "project_id",
                                                         "group",
                                                         "estimated_start_date",
-                                                        "estimated_end_date"
+                                                        "estimated_end_date",
+                                                        "stage_amount",
+                                                        "stage_amount_currency"
                                                     ]
                                                 },
                                                 "operator": {
@@ -51651,7 +51663,9 @@
                                                                     "project_id",
                                                                     "group",
                                                                     "estimated_start_date",
-                                                                    "estimated_end_date"
+                                                                    "estimated_end_date",
+                                                                    "stage_amount",
+                                                                    "stage_amount_currency"
                                                                 ]
                                                             },
                                                             "operator": {
@@ -66009,8 +66023,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator"
                             ]
                         },
@@ -66081,8 +66095,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator"
                             ]
                         },
@@ -66168,8 +66182,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator"
                             ]
                         },
@@ -66247,13 +66261,12 @@
                                                         "title",
                                                         "type",
                                                         "project_id",
-                                                        "project_stage_id",
                                                         "estimator_id",
                                                         "status",
                                                         "date",
                                                         "approved_date",
-                                                        "billed",
-                                                        "billed_date",
+                                                        "billed_in_full",
+                                                        "billed_in_full_date",
                                                         "external_id"
                                                     ]
                                                 },
@@ -66297,13 +66310,12 @@
                                                                     "title",
                                                                     "type",
                                                                     "project_id",
-                                                                    "project_stage_id",
                                                                     "estimator_id",
                                                                     "status",
                                                                     "date",
                                                                     "approved_date",
-                                                                    "billed",
-                                                                    "billed_date",
+                                                                    "billed_in_full",
+                                                                    "billed_in_full_date",
                                                                     "external_id"
                                                                 ]
                                                             },
@@ -66348,8 +66360,8 @@
                                                         "status",
                                                         "date",
                                                         "approved_date",
-                                                        "billed",
-                                                        "billed_date"
+                                                        "billed_in_full",
+                                                        "billed_in_full_date"
                                                     ]
                                                 },
                                                 "direction": {
@@ -66375,8 +66387,8 @@
                                                     "enum": [
                                                         "materials",
                                                         "materials.inventory",
-                                                        "projectStage",
                                                         "scopesOfWork",
+                                                        "scopesOfWork.stage",
                                                         "estimator"
                                                     ]
                                                 }
@@ -66458,8 +66470,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator"
                             ]
                         },
@@ -66577,8 +66589,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator"
                             ]
                         },
@@ -66636,8 +66648,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator"
                             ]
                         },
@@ -66687,8 +66699,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator"
                             ]
                         },
@@ -66825,8 +66837,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator"
                             ]
                         },
@@ -66900,8 +66912,8 @@
                             "enum": [
                                 "materials",
                                 "materials.inventory",
-                                "projectStage",
                                 "scopesOfWork",
+                                "scopesOfWork.stage",
                                 "estimator"
                             ]
                         },
@@ -72091,7 +72103,8 @@
                     "external_id": {
                         "type": "string",
                         "nullable": true
-                    }
+                    },
+                    "warehouse_quantity": {}
                 }
             },
             "InventoryResource": {
@@ -73344,10 +73357,6 @@
                     "project_id": {
                         "type": "integer"
                     },
-                    "project_stage_id": {
-                        "type": "integer",
-                        "nullable": true
-                    },
                     "estimator_id": {
                         "type": "integer",
                         "nullable": true
@@ -73375,10 +73384,10 @@
                         "nullable": true,
                         "format": "date"
                     },
-                    "billed": {
+                    "billed_in_full": {
                         "type": "integer"
                     },
-                    "billed_date": {
+                    "billed_in_full_date": {
                         "type": "string",
                         "nullable": true,
                         "format": "date"
@@ -73395,7 +73404,6 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "tax_rates": {},
                     "contract_days_added": {
                         "type": "integer"
                     },
