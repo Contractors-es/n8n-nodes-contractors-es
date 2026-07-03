@@ -38968,7 +38968,8 @@
                                 "projectBidding",
                                 "projectProposal",
                                 "scopesOfWork",
-                                "materials"
+                                "materials",
+                                "stages"
                             ]
                         },
                         "name": "include",
@@ -39043,7 +39044,8 @@
                                 "projectBidding",
                                 "projectProposal",
                                 "scopesOfWork",
-                                "materials"
+                                "materials",
+                                "stages"
                             ]
                         },
                         "name": "include",
@@ -39133,7 +39135,8 @@
                                 "projectBidding",
                                 "projectProposal",
                                 "scopesOfWork",
-                                "materials"
+                                "materials",
+                                "stages"
                             ]
                         },
                         "name": "include",
@@ -39182,7 +39185,8 @@
                                                         "mine",
                                                         "withLaborOrTm",
                                                         "editable",
-                                                        "editableOrMine"
+                                                        "editableOrMine",
+                                                        "awaitingPrepayment"
                                                     ]
                                                 },
                                                 "parameters": {
@@ -39342,7 +39346,8 @@
                                                         "projectBidding",
                                                         "projectProposal",
                                                         "scopesOfWork",
-                                                        "materials"
+                                                        "materials",
+                                                        "stages"
                                                     ]
                                                 }
                                             }
@@ -39428,7 +39433,8 @@
                                 "projectBidding",
                                 "projectProposal",
                                 "scopesOfWork",
-                                "materials"
+                                "materials",
+                                "stages"
                             ]
                         },
                         "name": "include",
@@ -39550,7 +39556,8 @@
                                 "projectBidding",
                                 "projectProposal",
                                 "scopesOfWork",
-                                "materials"
+                                "materials",
+                                "stages"
                             ]
                         },
                         "name": "include",
@@ -39612,7 +39619,8 @@
                                 "projectBidding",
                                 "projectProposal",
                                 "scopesOfWork",
-                                "materials"
+                                "materials",
+                                "stages"
                             ]
                         },
                         "name": "include",
@@ -39666,7 +39674,8 @@
                                 "projectBidding",
                                 "projectProposal",
                                 "scopesOfWork",
-                                "materials"
+                                "materials",
+                                "stages"
                             ]
                         },
                         "name": "include",
@@ -39807,7 +39816,8 @@
                                 "projectBidding",
                                 "projectProposal",
                                 "scopesOfWork",
-                                "materials"
+                                "materials",
+                                "stages"
                             ]
                         },
                         "name": "include",
@@ -39885,7 +39895,8 @@
                                 "projectBidding",
                                 "projectProposal",
                                 "scopesOfWork",
-                                "materials"
+                                "materials",
+                                "stages"
                             ]
                         },
                         "name": "include",
@@ -72078,10 +72089,7 @@
                         "type": "string",
                         "nullable": true
                     },
-                    "minimum_threshold": {
-                        "type": "integer",
-                        "nullable": true
-                    },
+                    "minimum_threshold": {},
                     "requested_quantity": {},
                     "quantity": {},
                     "available_quantity": {},
@@ -72096,6 +72104,15 @@
                         "type": "integer",
                         "nullable": true
                     },
+                    "suggested_sell_price": {},
+                    "suggested_sell_price_currency": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "bom_enabled": {
+                        "type": "integer"
+                    },
+                    "bom_labor_hours_per_unit": {},
                     "memo": {
                         "type": "string",
                         "nullable": true
@@ -72190,6 +72207,10 @@
                         "type": "integer"
                     },
                     "purchase_id": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "production_id": {
                         "type": "integer",
                         "nullable": true
                     },
@@ -72662,6 +72683,7 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "photos": {},
                     "status": {
                         "enum": [
                             "active",
@@ -72706,6 +72728,9 @@
                     "unit": {
                         "type": "string",
                         "nullable": true
+                    },
+                    "photo_required": {
+                        "type": "integer"
                     },
                     "external_id": {
                         "type": "string",
@@ -74024,6 +74049,9 @@
                     "unit_price": {},
                     "unit_price_currency": {
                         "type": "string"
+                    },
+                    "include_in_estimate": {
+                        "type": "integer"
                     },
                     "external_id": {
                         "type": "string",
