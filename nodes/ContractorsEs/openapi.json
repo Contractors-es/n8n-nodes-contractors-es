@@ -38966,7 +38966,7 @@
                                 "jobType",
                                 "referrer",
                                 "projectBidding",
-                                "projectProposal",
+                                "proposals",
                                 "scopesOfWork",
                                 "materials",
                                 "stages"
@@ -39042,7 +39042,7 @@
                                 "jobType",
                                 "referrer",
                                 "projectBidding",
-                                "projectProposal",
+                                "proposals",
                                 "scopesOfWork",
                                 "materials",
                                 "stages"
@@ -39133,7 +39133,7 @@
                                 "jobType",
                                 "referrer",
                                 "projectBidding",
-                                "projectProposal",
+                                "proposals",
                                 "scopesOfWork",
                                 "materials",
                                 "stages"
@@ -39344,7 +39344,7 @@
                                                     "type": "string",
                                                     "enum": [
                                                         "projectBidding",
-                                                        "projectProposal",
+                                                        "proposals",
                                                         "scopesOfWork",
                                                         "materials",
                                                         "stages"
@@ -39431,7 +39431,7 @@
                                 "jobType",
                                 "referrer",
                                 "projectBidding",
-                                "projectProposal",
+                                "proposals",
                                 "scopesOfWork",
                                 "materials",
                                 "stages"
@@ -39554,7 +39554,7 @@
                                 "jobType",
                                 "referrer",
                                 "projectBidding",
-                                "projectProposal",
+                                "proposals",
                                 "scopesOfWork",
                                 "materials",
                                 "stages"
@@ -39617,7 +39617,7 @@
                                 "jobType",
                                 "referrer",
                                 "projectBidding",
-                                "projectProposal",
+                                "proposals",
                                 "scopesOfWork",
                                 "materials",
                                 "stages"
@@ -39672,7 +39672,7 @@
                                 "jobType",
                                 "referrer",
                                 "projectBidding",
-                                "projectProposal",
+                                "proposals",
                                 "scopesOfWork",
                                 "materials",
                                 "stages"
@@ -39814,7 +39814,7 @@
                                 "jobType",
                                 "referrer",
                                 "projectBidding",
-                                "projectProposal",
+                                "proposals",
                                 "scopesOfWork",
                                 "materials",
                                 "stages"
@@ -39893,7 +39893,7 @@
                                 "jobType",
                                 "referrer",
                                 "projectBidding",
-                                "projectProposal",
+                                "proposals",
                                 "scopesOfWork",
                                 "materials",
                                 "stages"
@@ -55575,6 +55575,844 @@
                     "Project Bidding Notes Relation Api"
                 ],
                 "operationId": "delete-api-contractors-project-biddings-project-bidding-notes-note-dissociate"
+            }
+        },
+        "\/api\/contractors\/project-biddings\/{project_bidding}\/follow-ups": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/ProjectBiddingFollowUp"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Create contr project bidding follow up",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "post-api-contractors-project-biddings-project-bidding-follow-ups"
+            },
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "with_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 20
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                            }
+                                        },
+                                        "links": {
+                                            "$ref": "#\/components\/schemas\/ResourceLinks"
+                                        },
+                                        "meta": {
+                                            "$ref": "#\/components\/schemas\/ResourceMeta"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "summary": "Get a list of contr project bidding follow ups",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "get-api-contractors-project-biddings-project-bidding-follow-ups"
+            }
+        },
+        "\/api\/contractors\/project-biddings\/{project_bidding}\/follow-ups\/search": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "with_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "only_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 1
+                        },
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "integer",
+                            "default": 20
+                        },
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                            }
+                                        },
+                                        "links": {
+                                            "$ref": "#\/components\/schemas\/ResourceLinks"
+                                        },
+                                        "meta": {
+                                            "$ref": "#\/components\/schemas\/ResourceMeta"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    }
+                },
+                "summary": "Search for contr project bidding follow ups",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "post-api-contractors-project-biddings-project-bidding-follow-ups-search"
+            }
+        },
+        "\/api\/contractors\/project-biddings\/{project_bidding}\/follow-ups\/{follow_up}": {
+            "get": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "follow_up",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "with_trashed",
+                        "in": "query"
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "only_trashed",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Get contr project bidding follow up",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "get-api-contractors-project-biddings-project-bidding-follow-ups-follow-up"
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "follow_up",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "$ref": "#\/components\/schemas\/ProjectBiddingFollowUp"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Update contr project bidding follow up",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "patch-api-contractors-project-biddings-project-bidding-follow-ups-follow-up"
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "follow_up",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "force",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Delete contr project bidding follow up",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "delete-api-contractors-project-biddings-project-bidding-follow-ups-follow-up"
+            }
+        },
+        "\/api\/contractors\/project-biddings\/{project_bidding}\/follow-ups\/{follow_up}\/restore": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "follow_up",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Restore contr project bidding follow up",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "post-api-contractors-project-biddings-project-bidding-follow-ups-follow-up-restore"
+            }
+        },
+        "\/api\/contractors\/project-biddings\/{project_bidding}\/follow-ups\/batch": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "array",
+                                        "items": {
+                                            "$ref": "#\/components\/schemas\/ProjectBiddingFollowUp"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Create a batch of contr project bidding follow ups",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "post-api-contractors-project-biddings-project-bidding-follow-ups-batch"
+            },
+            "patch": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "object",
+                                        "properties": {
+                                            "{key}": {
+                                                "$ref": "#\/components\/schemas\/ProjectBiddingFollowUp"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Update a batch of contr project bidding follow ups",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "patch-api-contractors-project-biddings-project-bidding-follow-ups-batch"
+            },
+            "delete": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "boolean"
+                        },
+                        "name": "force",
+                        "in": "query"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer",
+                                            "description": "A list of resource IDs"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Delete a batch of contr project bidding follow ups",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "delete-api-contractors-project-biddings-project-bidding-follow-ups-batch"
+            }
+        },
+        "\/api\/contractors\/project-biddings\/{project_bidding}\/follow-ups\/batch\/restore": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application\/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "resources": {
+                                        "type": "array",
+                                        "items": {
+                                            "type": "integer",
+                                            "description": "A list of resource IDs"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "type": "array",
+                                            "items": {
+                                                "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    }
+                },
+                "summary": "Restore a batch of contr project bidding follow ups",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "post-api-contractors-project-biddings-project-bidding-follow-ups-batch-restore"
+            }
+        },
+        "\/api\/contractors\/project-biddings\/{project_bidding}\/follow-ups\/associate": {
+            "post": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Associate contr project bidding follow up with contr project bidding",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "post-api-contractors-project-biddings-project-bidding-follow-ups-associate"
+            }
+        },
+        "\/api\/contractors\/project-biddings\/{project_bidding}\/follow-ups\/{follow_up}\/dissociate": {
+            "delete": {
+                "parameters": [
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "project_bidding",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "schema": {
+                            "type": "integer"
+                        },
+                        "name": "follow_up",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application\/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "data": {
+                                            "$ref": "#\/components\/schemas\/ProjectBiddingFollowUpResource"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Unauthenticated"
+                    },
+                    "403": {
+                        "description": "Unauthorized"
+                    },
+                    "404": {
+                        "description": "Resource not found"
+                    },
+                    "422": {
+                        "description": "Validation error"
+                    }
+                },
+                "summary": "Dissociate contr project bidding follow up from contr project bidding",
+                "tags": [
+                    "Project Bidding Follow Ups Relation Api"
+                ],
+                "operationId": "delete-api-contractors-project-biddings-project-bidding-follow-ups-follow-up-dissociate"
             }
         },
         "\/api\/contractors\/project-biddings\/{project_bidding}\/contacts": {
@@ -71525,6 +72363,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "send_docs_from_email": {
+                        "type": "string",
+                        "nullable": true
+                    },
                     "web_address": {
                         "type": "string",
                         "nullable": true
@@ -71630,6 +72472,10 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "has_custom_employer_cost_markup": {
+                        "type": "integer"
+                    },
+                    "employer_cost_markup_percentage": {},
                     "salary_custom_percentages": {
                         "type": "integer"
                     },
@@ -72000,6 +72846,9 @@
                     "project_id": {
                         "type": "integer",
                         "nullable": true
+                    },
+                    "is_followup": {
+                        "type": "integer"
                     },
                     "external_id": {
                         "type": "string",
@@ -72848,7 +73697,8 @@
                         "nullable": true
                     },
                     "what_is_wrong_photos": {},
-                    "meter_value": {},
+                    "meter_value_before": {},
+                    "meter_value_after": {},
                     "external_id": {
                         "type": "string",
                         "nullable": true
@@ -72994,10 +73844,6 @@
                 "type": "object",
                 "properties": {
                     "project_bidding_id": {
-                        "type": "integer",
-                        "nullable": true
-                    },
-                    "project_proposal_id": {
                         "type": "integer",
                         "nullable": true
                     },
@@ -73227,6 +74073,13 @@
                     },
                     "job_progress": {
                         "type": "integer",
+                        "nullable": true
+                    },
+                    "time_exceeded_level": {
+                        "type": "integer"
+                    },
+                    "last_activity_at": {
+                        "type": "string",
                         "nullable": true
                     },
                     "tm": {
@@ -73617,6 +74470,8 @@
                         "type": "string",
                         "nullable": true
                     },
+                    "longitude": {},
+                    "latitude": {},
                     "job_type_id": {
                         "type": "integer",
                         "nullable": true
@@ -73716,6 +74571,84 @@
                     }
                 ]
             },
+            "ProjectBiddingFollowUp": {
+                "title": "ProjectBiddingFollowUp",
+                "type": "object",
+                "properties": {
+                    "project_bidding_id": {
+                        "type": "integer"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "follow_up_type": {},
+                    "outcome": {},
+                    "next_follow_up_date": {
+                        "type": "string",
+                        "nullable": true,
+                        "format": "date"
+                    },
+                    "change_priority": {
+                        "type": "integer"
+                    },
+                    "new_priority": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "priority_at_time": {
+                        "type": "integer",
+                        "nullable": true
+                    },
+                    "project_status_update": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "pricing_position": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "next_steps": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "champion_plan": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "other_projects": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "lost_to_competitor": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "note": {
+                        "type": "string",
+                        "nullable": true
+                    },
+                    "external_id": {
+                        "type": "string",
+                        "nullable": true
+                    }
+                }
+            },
+            "ProjectBiddingFollowUpResource": {
+                "title": "ProjectBiddingFollowUpResource",
+                "allOf": [
+                    {
+                        "$ref": "#\/components\/schemas\/ProjectBiddingFollowUp"
+                    },
+                    {
+                        "type": "object",
+                        "properties": {
+                            "id": {
+                                "type": "integer"
+                            }
+                        }
+                    }
+                ]
+            },
             "ProjectProposal": {
                 "title": "ProjectProposal",
                 "type": "object",
@@ -73729,6 +74662,10 @@
                     },
                     "project_bidding_id": {
                         "type": "integer"
+                    },
+                    "project_id": {
+                        "type": "integer",
+                        "nullable": true
                     },
                     "misc_est_cost": {},
                     "misc_est_cost_currency": {
@@ -73804,6 +74741,10 @@
                 "properties": {
                     "project_proposal_id": {
                         "type": "integer"
+                    },
+                    "project_stage_id": {
+                        "type": "integer",
+                        "nullable": true
                     },
                     "scope_of_work_id": {
                         "type": "integer"
@@ -74538,6 +75479,10 @@
         {
             "name": "Project Bidding Notes Relation Api",
             "description": "API documentation for Project Bidding Notes Relation Api"
+        },
+        {
+            "name": "Project Bidding Follow Ups Relation Api",
+            "description": "API documentation for Project Bidding Follow Ups Relation Api"
         },
         {
             "name": "Project Bidding Contacts Relation Api",
